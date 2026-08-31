@@ -646,3 +646,31 @@ Final fix used:
 - OR semantics for the generated FTS query so common user wording still hits seed documents
 
 SQLite FTS5 supports explicit boolean operators like `OR`, while whitespace-only terms imply `AND`.
+
+---
+
+## 19 — Current Runtime State After FTS5
+
+| Item | Detail |
+|---|---|
+| Status | Working local CPU-first cognitive runtime with real local retrieval |
+| Date | 2026-08-31 |
+
+### Active capabilities
+
+| Capability | Current implementation | Status |
+|---|---|---|
+| CPU local LLM | Qwen2.5-3B-Instruct Q4_K_M GGUF through llama-cpp-python | Working |
+| LLM loading | Lazy load through `CPU_INFERENCE_MODEL_PATH` | Working |
+| Fallback mode | Original deterministic/demo behavior when model path is absent or model fails to load | Working |
+| Chat formatting | `create_chat_completion()` using the GGUF's embedded chat template | Working |
+| Direct generation | `small_direct` → SmallModel | Working |
+| Retrieval-augmented generation | `small_rag` → DocumentRetriever → SmallModel → Verifier → renderer | Working |
+| Retrieval backend | SQLite FTS5 local full-text search | Working |
+| Retrieval data | `data/seed.jsonl`, initialized into local `data/knowledge.db` | Working |
+| Retrieval fallback | Synthetic evidence if database is missing or no FTS result is found | Working |
+| Calculation | Deterministic regex calculator | Working |
+| Invoice routing | Attachment-based and strong text-field-signal routing | Working |
+| Invoice extraction | Regex extraction for vendor, tax, total | Working |
+| Cache | In-memory exact-response cache | Working |
+| Tests | Four original tests | 4/4 passing |
