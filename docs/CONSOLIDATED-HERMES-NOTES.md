@@ -591,10 +591,58 @@ Replace the synthetic `DocumentRetriever` with local SQLite FTS5 search.
           COMPLETE
                ↓
 [SQLite FTS5 real DocumentRetriever]
-          IN PROGRESS / NEXT
+          COMPLETE
                ↓
 [Persistent memory, verifier, streaming, replay harness]
           FUTURE
 ```
 
 The next active work item is the **SQLite FTS5 DocumentRetriever replacement**. SQLite FTS5 provides a local virtual-table full-text-search mechanism and is well suited to the repo's CPU-first, dependency-light direction.
+
+---
+
+## 18 — SQLite FTS5 Retriever Implementation
+
+### Files changed
+
+| File | Change |
+|---|---|
+| `.gitignore` | Added `data/knowledge.db` |
+| `cognitive_runtime/runtime.py` | Rewrote `DocumentRetriever`; also contains prior SmallModel/chat/analyzer/invoice changes |
+| `pyproject.toml` | Optional `llm` dependency remains present |
+| `data/seed.jsonl` | New; 10 seed documents |
+| `data/init_db.py` | New DB initialization/backfill script |
+
+### Validation results
+
+| Check | Result |
+|---|---|
+| DB initialization | 10 documents loaded into `data/knowledge.db` |
+| Direct SQLite query | `policy OR days OR notice OR required` returned `demo-policy.txt` with rank about −1.98 |
+| Retriever example | Successful `small_rag` response grounded in `demo-policy.txt` |
+| Full test suite | 4/4 passing |
+
+### Retriever behavior
+
+| Condition | Behavior |
+|---|---|
+| DB exists + FTS match found | Returns real document chunk, `retrieval_score=0.84` |
+| DB exists + no match | Synthetic fallback, `retrieval_score=0.50` |
+| DB missing | Synthetic fallback, unchanged behavior |
+
+### Important implementation notes
+
+Initial FTS debugging found query mismatch due to:
+
+- Stop words
+- Punctuation
+- Wrong variable passed into `_query`
+- FTS default strictness causing misses on natural-language prompts
+
+Final fix used:
+
+- Query preprocessing
+- Punctuation stripping
+- OR semantics for the generated FTS query so common user wording still hits seed documents
+
+SQLite FTS5 supports explicit boolean operators like `OR`, while whitespace-only terms imply `AND`.
