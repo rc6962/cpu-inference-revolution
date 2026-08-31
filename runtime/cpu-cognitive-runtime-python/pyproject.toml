@@ -4,5 +4,8 @@ version = "0.1.0"
 description = "Dependency-light modular CPU-native cognitive serving research runtime"
 requires-python = ">=3.10"
 
+[project.optional-dependencies]
+llm = ["llama-cpp-python>=0.3.0"]
+
 [tool.pytest.ini_options]
 pythonpath = ["."]
