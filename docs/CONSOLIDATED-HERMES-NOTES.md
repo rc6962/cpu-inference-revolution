@@ -660,12 +660,12 @@ SQLite FTS5 supports explicit boolean operators like `OR`, while whitespace-only
 
 | Capability | Current implementation | Status |
 |---|---|---|
-| CPU local LLM | Qwen2.5-3B-Instruct Q4_K_M GGUF through llama-cpp-python | Working |
+| CPU local LLM | Qwen2.5-3B-Instruct Q4_K_M GGUF through `llama-cpp-python` | Working |
 | LLM loading | Lazy load through `CPU_INFERENCE_MODEL_PATH` | Working |
 | Fallback mode | Original deterministic/demo behavior when model path is absent or model fails to load | Working |
 | Chat formatting | `create_chat_completion()` using the GGUF's embedded chat template | Working |
-| Direct generation | `small_direct` → SmallModel | Working |
-| Retrieval-augmented generation | `small_rag` → DocumentRetriever → SmallModel → Verifier → renderer | Working |
+| Direct generation | `small_direct` → `SmallModel` | Working |
+| Retrieval-augmented generation | `small_rag` → `DocumentRetriever` → `SmallModel` → `Verifier` → renderer | Working |
 | Retrieval backend | SQLite FTS5 local full-text search | Working |
 | Retrieval data | `data/seed.jsonl`, initialized into local `data/knowledge.db` | Working |
 | Retrieval fallback | Synthetic evidence if database is missing or no FTS result is found | Working |
@@ -674,3 +674,75 @@ SQLite FTS5 supports explicit boolean operators like `OR`, while whitespace-only
 | Invoice extraction | Regex extraction for vendor, tax, total | Working |
 | Cache | In-memory exact-response cache | Working |
 | Tests | Four original tests | 4/4 passing |
+
+SQLite FTS5 is now the real retrieval layer: it indexes local document text in an FTS virtual table and searches it with `MATCH`, returning a ranked document chunk for the RAG route.
+
+### Current request flow
+
+```text
+Incoming request
+      ↓
+RequestAnalyzer
+      ↓
+┌─────────────────────────────────────────────────────┐
+│ deterministic_calculation → Calculator → Renderer   │
+│ invoice_extraction → InvoiceExtractor → Verifier    │
+│ small_direct → SmallModel → Renderer                │
+│ small_rag → DocumentRetriever → SmallModel          │
+│             → Verifier → Renderer                   │
+└─────────────────────────────────────────────────────┘
+      ↓
+Exact-response cache checked/stored as applicable
+      ↓
+Final response
+```
+
+### Current local files
+
+```text
+runtime/cpu-cognitive-runtime-python/
+├── cognitive_runtime/
+│   └── runtime.py                 # Main runtime and module logic
+├── data/
+│   ├── seed.jsonl                 # Source-controlled seed documents
+│   ├── init_db.py                 # Builds/populates the FTS5 DB
+│   └── knowledge.db               # Generated locally; ignored by Git
+├── tests/
+│   └── test_runtime.py            # Original tests, unchanged
+├── example.py
+├── pyproject.toml
+└── .gitignore
+```
+
+### Verified state
+
+- `data/init_db.py` created the database and loaded 10 seed documents.
+- FTS5 returned `demo-policy.txt` for a policy/notice query.
+- `small_rag` returned real evidence from local SQLite rather than only synthetic demo text.
+- The full test suite remained at **4/4 passing**.
+- Missing DB files still trigger the prior synthetic-evidence fallback, so the runtime retains a no-breakage path.
+
+### Immediate limitations
+
+- The retrieval corpus is only 10 seed records; it is a functional proof of concept, not yet your real knowledge base.
+- Retrieval uses keyword/full-text ranking, not semantic vector search.
+- `retrieval_score` is compatibility-oriented (`0.84` for a real hit and `0.50` for fallback), not a calibrated confidence score.
+- The LLM remains slow for uncached generations—around 13 seconds in the standardized warm test—and uses around 3.1 GB RAM.
+- Cache is in-memory only, so it disappears on process restart.
+- The verifier and invoice parser remain intentionally narrow.
+
+### Current position
+
+```text
+[Baseline prototype]                         Complete
+[Real local GGUF model]                      Complete
+[Correct routing and fallback]               Complete
+[Chat-completion formatting]                 Complete
+[Invoice parsing hardening]                  Complete
+[Benchmark + tuning]                         Complete
+[Real SQLite FTS5 retrieval]                 Complete
+[Real document ingestion / persistent cache] Next
+[Verifier hardening / streaming / replay]    Future
+```
+
+The next project phase is no longer "make retrieval work." It is **ingesting real local documents into the FTS database**, while maintaining source IDs, chunking, safe rebuilds, and testable retrieval quality.
