@@ -3,3 +3,7 @@ __pycache__/
 .pytest_cache/
 data/knowledge.db
 models/
+.venv/
+*.egg-info/
+results_mode_*.json
+reports-*.txt
