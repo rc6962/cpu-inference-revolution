@@ -406,24 +406,71 @@ class SmallModel(BaseModule):
         except Exception:
             self._llm = None
 
-    def run(self, context: ExecutionContext, inputs: Mapping[str, Any]) -> ModuleResult:
-        self._load_model()
+    def _get_rss(self):
+        """Get RSS bytes. Returns (current, peak, method)."""
+        try:
+            from scripts.process_rss import get_process_rss_bytes
+            return get_process_rss_bytes()
+        except ImportError:
+            try:
+                import sys as _sys
+                _repo = Path(__file__).resolve().parent.parent.parent.parent
+                _scripts = _repo / "scripts"
+                if str(_scripts) not in _sys.path:
+                    _sys.path.insert(0, str(_scripts))
+                from process_rss import get_process_rss_bytes
+                return get_process_rss_bytes()
+            except Exception:
+                return None, None, "rss_import_failed"
 
-        if self._llm is None:
+    def run(self, context: ExecutionContext, inputs: Mapping[str, Any]) -> ModuleResult:
+        # Collect RSS before model work
+        rss_before, _, rss_method = self._get_rss()
+
+        self._load_model()
+        model_loaded = self._llm is not None
+        load_time_ms = None  # Load time measured on first call only
+
+        if not model_loaded:
             # Fallback: original demo behavior
             if context.analysis and context.analysis.task_type == "retrieval_qa":
                 evidence = inputs.get("evidence", {})
                 answer = f"Based on {evidence.get('source_id', 'the supplied evidence')}: {evidence.get('text', '')}"
             else:
                 answer = f"Demo response for: {context.request.text}"
+            rss_after, _, _ = self._get_rss()
             return ModuleResult(self.name, "success", answer, 0.5,
-                                metadata={"fallback_used": True, "model_loaded": False, "model_name": self._model_path or "none"})
+                                metadata={
+                                    "model_metrics": {
+                                        "model_name": Path(self._model_path).stem if self._model_path else None,
+                                        "model_path_basename": Path(self._model_path).name if self._model_path else None,
+                                        "model_loaded": False,
+                                        "model_load_time_ms": None,
+                                        "fallback_used": True,
+                                        "fallback_reason": "no_model_configured" if not self._model_path else "model_load_failed",
+                                        "input_tokens": None,
+                                        "evidence_tokens": None,
+                                        "output_tokens": None,
+                                        "prompt_processing_time_ms": None,
+                                        "generation_time_ms": None,
+                                        "total_model_time_ms": None,
+                                        "time_to_first_token_ms": None,
+                                        "stop_reason": "fallback",
+                                        "prompt_tokens_per_second": None,
+                                        "generation_tokens_per_second": None,
+                                        "process_rss_before_bytes": rss_before,
+                                        "process_rss_after_bytes": rss_after,
+                                        "process_rss_peak_bytes": rss_after,
+                                        "rss_measurement_method": rss_method,
+                                        "metrics_available": False,
+                                        "metrics_unavailable_reason": "model not loaded",
+                                    }
+                                })
 
         try:
             user_text = inputs.get("prompt", context.request.text)
 
             # For retrieval routes, include evidence context in messages
-            # and post-process to preserve source_id in output
             is_retrieval = (
                 context.analysis
                 and context.analysis.task_type == "retrieval_qa"
@@ -431,7 +478,6 @@ class SmallModel(BaseModule):
             evidence = inputs.get("evidence", {}) if is_retrieval else {}
             source_id = evidence.get("source_id", "the supplied evidence")
             evidence_text = evidence.get("text", "")
-
             evidence_tokens = len(evidence_text) // 4 if evidence_text else 0
 
             if is_retrieval and evidence_text:
@@ -449,19 +495,28 @@ class SmallModel(BaseModule):
                     {"role": "user", "content": user_text},
                 ]
 
-            gen_start = time.perf_counter()
+            total_start = time.perf_counter()
             result = self._llm.create_chat_completion(
                 messages=messages,
                 max_tokens=256,
                 temperature=0.0,
             )
-            gen_ms = (time.perf_counter() - gen_start) * 1000
+            total_ms = (time.perf_counter() - total_start) * 1000
 
             text = result["choices"][0]["message"]["content"].strip()
             stop_reason = result["choices"][0].get("finish_reason", "unknown")
             usage = result.get("usage", {})
             input_tokens = usage.get("prompt_tokens", 0)
             output_tokens = usage.get("completion_tokens", 0)
+
+            # Normalize stop reason
+            if stop_reason not in ("stop", "length", "eos"):
+                if "stop" in str(stop_reason).lower():
+                    stop_reason = "stop"
+                elif "length" in str(stop_reason).lower():
+                    stop_reason = "length"
+                else:
+                    stop_reason = str(stop_reason)
 
             if not text:
                 text = f"Demo response for: {context.request.text}"
@@ -470,23 +525,72 @@ class SmallModel(BaseModule):
             if is_retrieval and source_id not in text:
                 text = f"Based on {source_id}: {text}"
 
+            # Collect RSS after
+            rss_after, rss_peak, _ = self._get_rss()
+
+            # Derive tokens/second
+            prompt_tps = input_tokens / (total_ms / 1000) if total_ms > 0 and input_tokens > 0 else None
+            gen_tps = output_tokens / (total_ms / 1000) if total_ms > 0 and output_tokens > 0 else None
+
             return ModuleResult(self.name, "success", text, 0.7,
                                 metadata={
-                                    "fallback_used": False,
-                                    "model_loaded": True,
-                                    "model_name": self._model_path or "unknown",
-                                    "input_tokens": input_tokens,
-                                    "evidence_tokens": evidence_tokens,
-                                    "output_tokens": output_tokens,
-                                    "generation_time_ms": round(gen_ms, 1),
-                                    "stop_reason": stop_reason,
+                                    "model_metrics": {
+                                        "model_name": Path(self._model_path).stem if self._model_path else None,
+                                        "model_path_basename": Path(self._model_path).name if self._model_path else None,
+                                        "model_loaded": True,
+                                        "model_load_time_ms": load_time_ms,
+                                        "fallback_used": False,
+                                        "fallback_reason": None,
+                                        "input_tokens": input_tokens,
+                                        "evidence_tokens": evidence_tokens,
+                                        "output_tokens": output_tokens,
+                                        "prompt_processing_time_ms": None,  # not available in llama-cpp-python 0.3.35
+                                        "generation_time_ms": None,  # not available in llama-cpp-python 0.3.35
+                                        "total_model_time_ms": round(total_ms, 1),
+                                        "time_to_first_token_ms": None,  # no streaming/first-token measurement available
+                                        "stop_reason": stop_reason,
+                                        "prompt_tokens_per_second": round(prompt_tps, 2) if prompt_tps else None,
+                                        "generation_tokens_per_second": round(gen_tps, 2) if gen_tps else None,
+                                        "process_rss_before_bytes": rss_before,
+                                        "process_rss_after_bytes": rss_after,
+                                        "process_rss_peak_bytes": rss_peak,
+                                        "rss_measurement_method": rss_method,
+                                        "metrics_available": True,
+                                        "metrics_unavailable_reason": None,
+                                    }
                                 })
         except Exception as exc:
+            rss_after, _, _ = self._get_rss()
             return ModuleResult(
                 self.name, "success",
                 f"Demo response for: {context.request.text}",
                 0.5, warnings=[f"LLM inference failed: {exc}"],
-                metadata={"fallback_used": True, "model_loaded": True, "model_name": self._model_path or "unknown", "error": str(exc)},
+                metadata={
+                    "model_metrics": {
+                        "model_name": Path(self._model_path).stem if self._model_path else None,
+                        "model_path_basename": Path(self._model_path).name if self._model_path else None,
+                        "model_loaded": True,
+                        "model_load_time_ms": load_time_ms,
+                        "fallback_used": True,
+                        "fallback_reason": "inference_error",
+                        "input_tokens": None,
+                        "evidence_tokens": None,
+                        "output_tokens": None,
+                        "prompt_processing_time_ms": None,
+                        "generation_time_ms": None,
+                        "total_model_time_ms": None,
+                        "time_to_first_token_ms": None,
+                        "stop_reason": "error",
+                        "prompt_tokens_per_second": None,
+                        "generation_tokens_per_second": None,
+                        "process_rss_before_bytes": rss_before,
+                        "process_rss_after_bytes": rss_after,
+                        "process_rss_peak_bytes": rss_after,
+                        "rss_measurement_method": rss_method,
+                        "metrics_available": False,
+                        "metrics_unavailable_reason": f"inference error: {exc}",
+                    }
+                },
             )
 
 
