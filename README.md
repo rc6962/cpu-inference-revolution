@@ -29,14 +29,26 @@ The runtime includes three working backends beyond the original deterministic pl
 
 All other modules (Calculator, InvoiceExtractor, Verifier, ResponseRenderer) remain deterministic regex-based implementations.
 
+## Interpreter note
+
+Inside an activated virtual environment, use `python`. On Linux systems where `python` is unavailable, use `python3`.
+
 ## Quick start
 
 ### Fallback mode (no install required)
 
 Runs with deterministic placeholder modules. No model download, no database.
 
+**Linux / macOS:**
 ```bash
 cd runtime/cpu-cognitive-runtime-python
+python3 example.py
+python3 -m pytest -q
+```
+
+**Windows PowerShell:**
+```powershell
+cd runtime\cpu-cognitive-runtime-python
 python example.py
 python -m pytest -q
 ```
@@ -45,12 +57,18 @@ python -m pytest -q
 
 Adds real document retrieval from a local SQLite database. Still no model needed.
 
+**Linux / macOS:**
 ```bash
-# Initialize the knowledge base (one-time, from repo root)
-python data/init_db.py
-
-# Run with real retrieval
+python3 data/init_db.py          # one-time, from repo root
 cd runtime/cpu-cognitive-runtime-python
+python3 example.py
+python3 -m pytest -q
+```
+
+**Windows PowerShell:**
+```powershell
+python data\init_db.py           # one-time, from repo root
+cd runtime\cpu-cognitive-runtime-python
 python example.py
 python -m pytest -q
 ```
@@ -59,27 +77,49 @@ python -m pytest -q
 
 Adds real CPU inference via a quantized GGUF model.
 
+**Linux / macOS:**
 ```bash
-# 1. Install llama-cpp-python (pre-built CPU wheel)
+# 1. Create and activate virtual environment
+python3 -m venv .venv
+source .venv/bin/activate
+
+# 2. Install llama-cpp-python (pre-built CPU wheel)
 pip install llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
 
-# 2. Download the model (~2 GB)
+# 3. Download the model (~2 GB)
 mkdir -p models
 curl -L -o models/qwen2.5-3b-instruct-q4_k_m.gguf \
   "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF/resolve/main/qwen2.5-3b-instruct-q4_k_m.gguf"
 
-# 3. Initialize the knowledge base
-python data/init_db.py
+# 4. Initialize the knowledge base
+python3 data/init_db.py
 
-# 4. Set the model path and run
+# 5. Set the model path and run
 cd runtime/cpu-cognitive-runtime-python
+CPU_INFERENCE_MODEL_PATH=../../models/qwen2.5-3b-instruct-q4_k_m.gguf python3 example.py
+```
 
-# Bash / Linux / macOS:
-CPU_INFERENCE_MODEL_PATH=../../models/qwen2.5-3b-instruct-q4_k_m.gguf python example.py
+**Windows PowerShell:**
+```powershell
+# 1. Create and activate virtual environment
+py -3 -m venv .venv
+.\.venv\Scripts\Activate.ps1
 
-# PowerShell / Windows:
-# $env:CPU_INFERENCE_MODEL_PATH = "E:\cpu-inference-revolution\models\qwen2.5-3b-instruct-q4_k_m.gguf"
-# python example.py
+# 2. Install llama-cpp-python (pre-built CPU wheel)
+pip install llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+
+# 3. Download the model (~2 GB)
+mkdir models
+curl -L -o models\qwen2.5-3b-instruct-q4_k_m.gguf `
+  "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF/resolve/main/qwen2.5-3b-instruct-q4_k_m.gguf"
+
+# 4. Initialize the knowledge base
+python data\init_db.py
+
+# 5. Set the model path and run
+cd runtime\cpu-cognitive-runtime-python
+$env:CPU_INFERENCE_MODEL_PATH = ".\models\qwen2.5-3b-instruct-q4_k_m.gguf"
+python example.py
 ```
 
 ## Architecture
@@ -104,7 +144,7 @@ The execution graph is conditional — only the modules needed for the selected 
 |----------|----------|---------|-------------|
 | `CPU_INFERENCE_MODEL_PATH` | No | `None` (demo mode) | Path to a GGUF model file |
 
-When unset or pointing to a nonexistent file, SmallModel returns demo output automatically. The variable can be set in the shell, in PowerShell, or exported in a `.env` file loaded by your shell profile.
+When unset or pointing to a nonexistent file, SmallModel returns demo output automatically. The variable is read from the process environment. A `.env` file works only if it is loaded by the shell, launcher, or external tooling; the runtime does not load `.env` files itself.
 
 ## Generated files (not committed)
 

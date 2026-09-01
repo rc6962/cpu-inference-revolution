@@ -49,21 +49,67 @@ PROMPTS = {
 
 
 def get_ram() -> tuple[float, float]:
-    """Return (total_gb, free_gb)."""
-    try:
-        import subprocess
+    """Return (total_gb, free_gb). Cross-platform: Windows, Linux, macOS."""
+    import os
+    import platform
+    import subprocess
 
-        out = subprocess.check_output(
-            ["powershell", "-Command",
-             "$o=Get-CimInstance Win32_OperatingSystem;"
-             "Write-Host ([math]::Round($o.TotalVisibleMemorySize/1MB,2))"
-             "Write-Host ([math]::Round($o.FreePhysicalMemory/1MB,2))"],
-            text=True, timeout=5,
-        )
-        lines = out.strip().split()
-        return float(lines[0]), float(lines[1])
-    except Exception:
-        return 0.0, 0.0
+    system = platform.system()
+
+    # Windows: PowerShell
+    if system == "Windows":
+        try:
+            out = subprocess.check_output(
+                ["powershell", "-Command",
+                 "$o=Get-CimInstance Win32_OperatingSystem;"
+                 "Write-Host ([math]::Round($o.TotalVisibleMemorySize/1MB,2));"
+                 "Write-Host ([math]::Round($o.FreePhysicalMemory/1MB,2))"],
+                text=True, timeout=5,
+            )
+            lines = out.strip().split()
+            return float(lines[0]), float(lines[1])
+        except Exception:
+            pass
+
+    # Linux: /proc/meminfo
+    if system == "Linux":
+        try:
+            with open("/proc/meminfo") as f:
+                info = {}
+                for line in f:
+                    parts = line.split()
+                    if len(parts) >= 2:
+                        info[parts[0].rstrip(":")] = int(parts[1])  # kB
+            total_kb = info.get("MemTotal", 0)
+            free_kb = info.get("MemAvailable", info.get("MemFree", 0))
+            return round(total_kb / 1048576, 2), round(free_kb / 1048576, 2)
+        except Exception:
+            pass
+
+    # macOS: sysctl
+    if system == "Darwin":
+        try:
+            total_bytes = int(subprocess.check_output(
+                ["sysctl", "-n", "hw.memsize"], text=True, timeout=5
+            ).strip())
+            # Free memory: use vm_stat
+            vm = subprocess.check_output(["vm_stat"], text=True, timeout=5)
+            page_size = 4096  # default
+            for line in vm.splitlines():
+                if "page size of" in line.lower():
+                    page_size = int(line.split()[-2])
+                    break
+            free_pages = 0
+            for line in vm.splitlines():
+                if "Pages free" in line:
+                    free_pages = int(line.split()[-1].rstrip("."))
+                    break
+            free_bytes = free_pages * page_size
+            return round(total_bytes / (1024**3), 2), round(free_bytes / (1024**3), 2)
+        except Exception:
+            pass
+
+    return 0.0, 0.0
 
 
 def bench_route(runtime: Runtime, route: str, prompts: list[str]) -> dict:
