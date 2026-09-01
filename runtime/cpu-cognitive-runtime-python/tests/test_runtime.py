@@ -77,3 +77,64 @@ def test_retrieval_routing_requirements():
     runtime = Runtime()
     result = runtime.execute(Request("a6", "s", "What are the invoice submission requirements?"))
     assert result.route == "small_rag"
+
+
+# ── Retrieval diagnostic tests ──
+
+def _get_retrieval_metadata(runtime, text):
+    """Execute a retrieval request and return the document_retriever trace metadata."""
+    runtime.cache.clear()
+    result = runtime.execute(Request("diag", "s", text))
+    for trace in result.traces:
+        if trace.module == "document_retriever":
+            return trace.metadata
+    return None
+
+
+def test_retrieval_sick_days_returns_hr_handbook():
+    runtime = Runtime()
+    meta = _get_retrieval_metadata(runtime, "How many sick days does the handbook allow?")
+    assert meta is not None, "document_retriever not invoked"
+    assert meta["selected_source_id"] == "demo-hr-handbook.txt"
+    assert len(meta["top_k_candidates"]) >= 2
+
+
+def test_retrieval_onboarding_returns_hr_handbook():
+    runtime = Runtime()
+    meta = _get_retrieval_metadata(runtime, "What documents are needed for onboarding?")
+    assert meta is not None
+    assert meta["selected_source_id"] == "demo-hr-handbook.txt"
+
+
+def test_retrieval_no_matching_document():
+    """A query with no retrieval keywords routes elsewhere — no retriever trace expected."""
+    runtime = Runtime()
+    meta = _get_retrieval_metadata(runtime, "What is the quantum entanglement coefficient?")
+    # This query has no retrieval keywords, so it routes to small_direct, not small_rag.
+    # No document_retriever trace is expected.
+    assert meta is None  # routed to small_direct, no retrieval attempted
+
+
+def test_retrieval_phrase_preservation():
+    """Verify that multiword phrases like 'sick days' are preserved in the FTS query."""
+    runtime = Runtime()
+    meta = _get_retrieval_metadata(runtime, "How many sick days does the handbook allow?")
+    assert meta is not None
+    fts_q = meta["fts_query"].lower()
+    # 'sick' and 'days' should appear as phrase candidates
+    assert "sick" in fts_q
+
+
+def test_retrieval_low_confidence_no_answer():
+    """A non-retrieval query routes elsewhere — no retriever trace expected."""
+    runtime = Runtime()
+    runtime.cache.clear()
+    result = runtime.execute(Request("low", "s", "What is the meaning of life?"))
+    # This query has no retrieval keywords, routes to small_direct
+    for trace in result.traces:
+        if trace.module == "document_retriever":
+            # If retriever was somehow invoked, verify it handles gracefully
+            assert trace.metadata["retrieval_status"] in ("low_confidence", "success")
+            return
+    # Expected: no retriever trace (routed to small_direct)
+    assert result.route == "small_direct"

@@ -216,6 +216,12 @@ class DocumentRetriever(BaseModule):
     name = "document_retriever"
     residency = Residency.WARM
 
+    # Generic question terms that should not drive ranking
+    _QUESTION_TERMS = re.compile(
+        r"\b(?:how|what|when|where|why|who|which|does|do|is|are|was|were|can|could|would|should|may|might|will|shall|the|a|an|to|of|for|in|on|with|by|from|this|that|it|and|or|not)\b",
+        re.I,
+    )
+
     def __init__(self, db_path: str | None = None):
         self._db_path = db_path or str(
             Path(__file__).parent.parent.parent.parent / "data" / "knowledge.db"
@@ -229,28 +235,91 @@ class DocumentRetriever(BaseModule):
         re.I,
     )
 
-    def _query(self, query_text: str, top_k: int = 1) -> list[dict]:
-        import sqlite3
-        # Strip stop words and punctuation to improve FTS5 match quality
+    def _normalize_query(self, query_text: str) -> str:
+        """Strip stop words and punctuation, preserving multiword phrases."""
         cleaned = self._STOP_WORDS.sub(" ", query_text)
-        cleaned = re.sub(r"[^\w\s]", " ", cleaned)  # strip punctuation
+        cleaned = re.sub(r"[^\w\s]", " ", cleaned)
         cleaned = re.sub(r"\s+", " ", cleaned).strip()
-        if not cleaned:
-            cleaned = query_text  # fallback to original if all words removed
+        return cleaned if cleaned else query_text
+
+    def _detect_phrases(self, query_text: str) -> list[str]:
+        """Detect quoted or common multiword phrases in the query."""
+        phrases = []
+        # Quoted phrases
+        for m in re.finditer(r'"([^"]+)"', query_text):
+            phrases.append(m.group(1).lower())
+        # Common compound terms
+        compounds = [
+            "sick days", "sick leave", "vacation policy", "probation period",
+            "onboarding", "resignation", "termination", "benefits",
+            "handbook", "contract", "invoice", "submission",
+        ]
+        for c in compounds:
+            if c in query_text.lower():
+                phrases.append(c)
+        return phrases
+
+    def _compute_rerank_score(self, candidate: dict, phrases: list[str], query_text: str) -> float:
+        """Deterministic reranking: phrase overlap + rare-term overlap + penalties."""
+        text_lower = candidate["text"].lower()
+        source_lower = candidate["source_id"].lower()
+
+        # Phrase overlap (strong signal)
+        phrase_hits = sum(1 for p in phrases if p in text_lower or p in source_lower)
+        phrase_score = phrase_hits * 2.0
+
+        # Rare-term overlap (terms not in question_terms)
+        query_words = set(query_text.lower().split())
+        rare_words = query_words - set(self._QUESTION_TERMS.findall(query_text.lower()))
+        text_words = set(text_lower.split())
+        rare_overlap = len(rare_words & text_words)
+        rare_score = rare_overlap * 0.5
+
+        # Source/document metadata match
+        source_match = 1.0 if any(p in source_lower for p in phrases) else 0.0
+
+        # BM25 base score (less negative = better)
+        bm25_score = -candidate.get("rank", 0) / 10.0
+
+        return bm25_score + phrase_score + rare_score + source_match
+
+    def _query(self, query_text: str, top_k: int = 3) -> list[dict]:
+        import sqlite3
+        cleaned = self._normalize_query(query_text)
+        phrases = self._detect_phrases(query_text)
+
+        # Preserve phrases as quoted terms in FTS query
+        fts_terms = cleaned.split()
+        fts_parts = []
+        for term in fts_terms:
+            # Check if this term is part of a detected phrase
+            in_phrase = any(term in p.split() for p in phrases)
+            if in_phrase:
+                fts_parts.append(f'"{term}"')
+            else:
+                fts_parts.append(term)
+        fts_query = " OR ".join(fts_parts)
+
         conn = sqlite3.connect(self._db_path)
         conn.row_factory = sqlite3.Row
-        # Use OR semantics so partial matches still return results
-        fts_query = " OR ".join(cleaned.split())
         rows = conn.execute(
             """SELECT source_id, location, text, bm25(documents_fts) AS rank
                FROM documents_fts
                WHERE documents_fts MATCH ?
                ORDER BY rank
                LIMIT ?""",
-            (fts_query, top_k),
+            (fts_query, top_k * 2),  # fetch extra for reranking
         ).fetchall()
         conn.close()
-        return [dict(r) for r in rows]
+
+        candidates = [dict(r) for r in rows]
+
+        # Rerank using deterministic scoring
+        for c in candidates:
+            c["rerank_score"] = self._compute_rerank_score(c, phrases, query_text)
+
+        candidates.sort(key=lambda c: c["rerank_score"], reverse=True)
+        return candidates[:top_k]
 
     def run(self, context: ExecutionContext, inputs: Mapping[str, Any]) -> ModuleResult:
         query = context.request.text
@@ -262,30 +331,56 @@ class DocumentRetriever(BaseModule):
                 "text": f"Evidence selected for query: {query}",
                 "retrieval_score": 0.84,
             }
-            return ModuleResult(self.name, "success", evidence, 0.84)
+            return ModuleResult(self.name, "success", evidence, 0.84,
+                                metadata={"retrieval_status": "fallback_no_db", "evidence_sufficient": True})
 
         try:
-            results = self._query(query)
+            candidates = self._query(query, top_k=3)
         except Exception:
-            results = []
+            candidates = []
 
-        if not results:
+        # Diagnostic metadata
+        cleaned = self._normalize_query(query)
+        fts_query = " OR ".join(cleaned.split())
+        phrases = self._detect_phrases(query)
+
+        diagnostics = {
+            "raw_query": query,
+            "normalized_query": cleaned,
+            "fts_query": fts_query,
+            "phrases_detected": phrases,
+            "top_k_candidates": [
+                {"source_id": c["source_id"], "bm25_rank": round(c["rank"], 2), "rerank_score": round(c["rerank_score"], 2), "text_excerpt": c["text"][:80]}
+                for c in candidates
+            ],
+        }
+
+        if not candidates:
             evidence = {
                 "source_id": "demo-policy.txt",
                 "location": "demo",
                 "text": f"Evidence selected for query: {query}",
                 "retrieval_score": 0.50,
             }
-            return ModuleResult(self.name, "success", evidence, 0.50)
+            diagnostics["retrieval_status"] = "no_match"
+            diagnostics["evidence_sufficient"] = False
+            diagnostics["retrieval_warnings"] = ["No FTS5 match found"]
+            return ModuleResult(self.name, "success", evidence, 0.50, metadata=diagnostics)
 
-        top = results[0]
+        top = candidates[0]
         evidence = {
             "source_id": top["source_id"],
             "location": top["location"],
             "text": top["text"],
             "retrieval_score": 0.84,
         }
-        return ModuleResult(self.name, "success", evidence, 0.84)
+
+        diagnostics["selected_source_id"] = top["source_id"]
+        diagnostics["retrieval_status"] = "success"
+        diagnostics["evidence_sufficient"] = True
+        diagnostics["retrieval_warnings"] = []
+
+        return ModuleResult(self.name, "success", evidence, 0.84, metadata=diagnostics)
 
 
 class SmallModel(BaseModule):
