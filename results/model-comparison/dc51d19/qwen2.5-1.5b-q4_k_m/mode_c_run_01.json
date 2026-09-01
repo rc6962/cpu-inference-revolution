@@ -1,0 +1,1748 @@
+{
+  "mode": "forced",
+  "results": [
+    {
+      "case": {
+        "id": "calc-001",
+        "category": "calculation",
+        "input": "Operating margin if revenue 850000 expenses 612000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "28.00%",
+        "expected_fields": {
+          "margin_pct": 28.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "28.0%",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1022.1,
+      "steps": {
+        "small_model": 1021.8,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1021.752,
+          "output_summary": "28.0%",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.01,
+          "output_summary": "28.0%",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-002",
+        "category": "calculation",
+        "input": "Profit margin if revenue 500000 costs 375000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "25.00%",
+        "expected_fields": {
+          "margin_pct": 25.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "30",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 372.0,
+      "steps": {
+        "small_model": 371.8,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 371.83,
+          "output_summary": "30",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.009,
+          "output_summary": "30",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-003",
+        "category": "calculation",
+        "input": "Margin percentage if sales 1200000 expenses 960000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "20.00%",
+        "expected_fields": {
+          "margin_pct": 20.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "20",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 439.0,
+      "steps": {
+        "small_model": 438.9,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 438.889,
+          "output_summary": "20",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.006,
+          "output_summary": "20",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-004",
+        "category": "calculation",
+        "input": "Operating margin if revenue 2000000 expenses 1400000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "30.00%",
+        "expected_fields": {
+          "margin_pct": 30.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "30",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 425.4,
+      "steps": {
+        "small_model": 425.3,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 425.285,
+          "output_summary": "30",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.009,
+          "output_summary": "30",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-005",
+        "category": "calculation",
+        "input": "Profit margin if revenue 750000 costs 600000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "20.00%",
+        "expected_fields": {
+          "margin_pct": 20.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "10",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 479.8,
+      "steps": {
+        "small_model": 479.5,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 479.531,
+          "output_summary": "10",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.014,
+          "output_summary": "10",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-006",
+        "category": "calculation",
+        "input": "Margin if revenue 100000 expenses 85000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "15.00%",
+        "expected_fields": {
+          "margin_pct": 15.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "5000",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 552.1,
+      "steps": {
+        "small_model": 551.7,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 551.723,
+          "output_summary": "5000",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.008,
+          "output_summary": "5000",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-007",
+        "category": "calculation",
+        "input": "Operating margin if revenue 300000 expenses 210000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "30.00%",
+        "expected_fields": {
+          "margin_pct": 30.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "30",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 379.3,
+      "steps": {
+        "small_model": 379.1,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 379.108,
+          "output_summary": "30",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.01,
+          "output_summary": "30",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-008",
+        "category": "calculation",
+        "input": "Profit margin if revenue 450000 costs 360000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "20.00%",
+        "expected_fields": {
+          "margin_pct": 20.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "30",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 425.3,
+      "steps": {
+        "small_model": 425.1,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 425.13,
+          "output_summary": "30",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "30",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-001",
+        "category": "retrieval",
+        "input": "According to the policy, how many days notice are required?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-policy.txt",
+          "key_fact": "30 days"
+        },
+        "difficulty": "easy"
+      },
+      "output": "The policy requires 30 days' notice.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1044.6,
+      "steps": {
+        "small_model": 1044.5,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1044.487,
+          "output_summary": "The policy requires 30 days' notice.",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.006,
+          "output_summary": "The policy requires 30 days' notice.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-002",
+        "category": "retrieval",
+        "input": "What does the contract say about termination?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-contract-templates.txt",
+          "key_fact": "termination"
+        },
+        "difficulty": "easy"
+      },
+      "output": "The contract typically specifies the conditions and procedures for termination, including notice periods and payment terms.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1461.6,
+      "steps": {
+        "small_model": 1461.5,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1461.507,
+          "output_summary": "The contract typically specifies the conditions and procedures for termination, including notice periods and payment terms.",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.007,
+          "output_summary": "The contract typically specifies the conditions and procedures for termination, including notice periods and payment terms.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-003",
+        "category": "retrieval",
+        "input": "How many sick days does the handbook allow?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-hr-handbook.txt",
+          "key_fact": "10 sick days"
+        },
+        "difficulty": "easy"
+      },
+      "output": "The handbook allows 10 sick days per year.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 936.0,
+      "steps": {
+        "small_model": 935.8,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 935.81,
+          "output_summary": "The handbook allows 10 sick days per year.",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "The handbook allows 10 sick days per year.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-004",
+        "category": "retrieval",
+        "input": "What is the vacation policy?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-policy.txt",
+          "key_fact": "vacation"
+        },
+        "difficulty": "easy"
+      },
+      "output": "The vacation policy is the set of rules and guidelines that govern the use of vacation time by employees. It outlines the procedures for taking leave, the length of leave, and the responsibilities of the employee during their absence.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 3619.7,
+      "steps": {
+        "small_model": 3619.6,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 3619.622,
+          "output_summary": "The vacation policy is the set of rules and guidelines that govern the use of vacation time by employees. It outlines the procedures for taking leave, the lengt...",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "The vacation policy is the set of rules and guidelines that govern the use of vacation time by employees. It outlines the procedures for taking leave, the lengt...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-005",
+        "category": "retrieval",
+        "input": "What are the invoice submission requirements?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-invoice-spec.txt",
+          "key_fact": "invoice"
+        },
+        "difficulty": "easy"
+      },
+      "output": "Invoice submission requirements vary by country and industry. Generally, they include providing accurate and complete information about the goods or services sold, including the invoice number, date, amount, and payment terms. Some may require a signed copy, while others may allow electronic submissions. It's important to check with your specific supplier or industry association for detailed guidelines.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 5213.4,
+      "steps": {
+        "small_model": 5213.3,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 5213.328,
+          "output_summary": "Invoice submission requirements vary by country and industry. Generally, they include providing accurate and complete information about the goods or services so...",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "Invoice submission requirements vary by country and industry. Generally, they include providing accurate and complete information about the goods or services so...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-006",
+        "category": "retrieval",
+        "input": "How does the probation period work?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-hr-handbook.txt",
+          "key_fact": "probation"
+        },
+        "difficulty": "easy"
+      },
+      "output": "The probation period is a period of time during which a probationer is supervised by a probation officer.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 2037.1,
+      "steps": {
+        "small_model": 2037.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 2036.989,
+          "output_summary": "The probation period is a period of time during which a probationer is supervised by a probation officer.",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "The probation period is a period of time during which a probationer is supervised by a probation officer.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-007",
+        "category": "retrieval",
+        "input": "What notice is needed for resignation?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-policy.txt",
+          "key_fact": "30 days"
+        },
+        "difficulty": "easy"
+      },
+      "output": "A resignation letter is typically accompanied by a resignation notice.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1134.4,
+      "steps": {
+        "small_model": 1134.3,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1134.29,
+          "output_summary": "A resignation letter is typically accompanied by a resignation notice.",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "A resignation letter is typically accompanied by a resignation notice.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-008",
+        "category": "retrieval",
+        "input": "What documents are needed for onboarding?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-hr-handbook.txt",
+          "key_fact": "onboarding"
+        },
+        "difficulty": "easy"
+      },
+      "output": "The documents needed for onboarding can vary depending on the organization and the specific role. However, common documents that are typically required include:\n\n1. Resume or CV\n2. Cover letter\n3. Educational background (degrees, transcripts)\n4. Work experience (job titles, dates, and descriptions)\n5. References (names, contact information, and relationship)\n6. Proof of identity (driver's license, passport, or birth certificate)\n7. Proof of employment (pay stubs, tax returns, or employment contract)\n8. Professional certifications or licenses\n9. Any other relevant documents specific to the role\n\nIt's important to check with the specific organization for any additional requirements.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 10052.5,
+      "steps": {
+        "small_model": 10052.4,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 10052.423,
+          "output_summary": "The documents needed for onboarding can vary depending on the organization and the specific role. However, common documents that are typically required include:...",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "The documents needed for onboarding can vary depending on the organization and the specific role. However, common documents that are typically required include:...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-001",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Acme, Tax 45, Total 245",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Acme\", \"tax\": 45.0, \"total\": 245.0}",
+        "expected_fields": {
+          "vendor": "Acme",
+          "tax": 45.0,
+          "total": 245.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Acme\", \"tax\": 45, \"total\": 245}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 2147.7,
+      "steps": {
+        "small_model": 2147.7,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 2147.652,
+          "output_summary": "{\"vendor\": \"Acme\", \"tax\": 45, \"total\": 245}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "{\"vendor\": \"Acme\", \"tax\": 45, \"total\": 245}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-002",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Beta Inc, Tax 12.50, Total 62.50",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Beta Inc\", \"tax\": 12.5, \"total\": 62.5}",
+        "expected_fields": {
+          "vendor": "Beta Inc",
+          "tax": 12.5,
+          "total": 62.5
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Beta Inc\", \"tax\": 12.5, \"total\": 62.5}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 4130.4,
+      "steps": {
+        "small_model": 4130.3,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 4130.343,
+          "output_summary": "{\"vendor\": \"Beta Inc\", \"tax\": 12.5, \"total\": 62.5}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.006,
+          "output_summary": "{\"vendor\": \"Beta Inc\", \"tax\": 12.5, \"total\": 62.5}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-003",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Gamma Co, Tax 88, Total 488",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Gamma Co\", \"tax\": 88.0, \"total\": 488.0}",
+        "expected_fields": {
+          "vendor": "Gamma Co",
+          "tax": 88.0,
+          "total": 488.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Gamma Co\", \"tax\": \"88\", \"total\": \"488\"}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1867.1,
+      "steps": {
+        "small_model": 1867.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1867.039,
+          "output_summary": "{\"vendor\": \"Gamma Co\", \"tax\": \"88\", \"total\": \"488\"}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.005,
+          "output_summary": "{\"vendor\": \"Gamma Co\", \"tax\": \"88\", \"total\": \"488\"}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-004",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Delta LLC, Tax 33.00, Total 183.00",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Delta LLC\", \"tax\": 33.0, \"total\": 183.0}",
+        "expected_fields": {
+          "vendor": "Delta LLC",
+          "tax": 33.0,
+          "total": 183.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Delta LLC\", \"tax\": 33.00, \"total\": 183.00}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 2263.2,
+      "steps": {
+        "small_model": 2263.1,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 2263.13,
+          "output_summary": "{\"vendor\": \"Delta LLC\", \"tax\": 33.00, \"total\": 183.00}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "{\"vendor\": \"Delta LLC\", \"tax\": 33.00, \"total\": 183.00}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-005",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Epsilon, Tax 5.25, Total 27.75",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Epsilon\", \"tax\": 5.25, \"total\": 27.75}",
+        "expected_fields": {
+          "vendor": "Epsilon",
+          "tax": 5.25,
+          "total": 27.75
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Epsilon\", \"tax\": 5.25, \"total\": 27.75}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1996.1,
+      "steps": {
+        "small_model": 1995.9,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1995.941,
+          "output_summary": "{\"vendor\": \"Epsilon\", \"tax\": 5.25, \"total\": 27.75}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.007,
+          "output_summary": "{\"vendor\": \"Epsilon\", \"tax\": 5.25, \"total\": 27.75}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-006",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Zeta Corp, Tax 120, Total 720",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Zeta Corp\", \"tax\": 120.0, \"total\": 720.0}",
+        "expected_fields": {
+          "vendor": "Zeta Corp",
+          "tax": 120.0,
+          "total": 720.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Zeta Corp\", \"tax\": 120, \"total\": 720}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1805.9,
+      "steps": {
+        "small_model": 1805.7,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1805.727,
+          "output_summary": "{\"vendor\": \"Zeta Corp\", \"tax\": 120, \"total\": 720}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "{\"vendor\": \"Zeta Corp\", \"tax\": 120, \"total\": 720}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-007",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Eta Inc, Tax 0, Total 50",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Eta Inc\", \"tax\": 0.0, \"total\": 50.0}",
+        "expected_fields": {
+          "vendor": "Eta Inc",
+          "tax": 0.0,
+          "total": 50.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Eta Inc\", \"tax\": 0, \"total\": 50}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1630.9,
+      "steps": {
+        "small_model": 1630.9,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1630.883,
+          "output_summary": "{\"vendor\": \"Eta Inc\", \"tax\": 0, \"total\": 50}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "{\"vendor\": \"Eta Inc\", \"tax\": 0, \"total\": 50}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-001",
+        "category": "generation",
+        "input": "Rewrite to sound professional: The meeting went okay.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "The meeting proceeded as expected.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 810.0,
+      "steps": {
+        "small_model": 809.9,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 809.927,
+          "output_summary": "The meeting proceeded as expected.",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "The meeting proceeded as expected.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-002",
+        "category": "generation",
+        "input": "Make formal: We need the report by Friday.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "We require the report to be submitted by Friday.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 832.5,
+      "steps": {
+        "small_model": 832.4,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 832.411,
+          "output_summary": "We require the report to be submitted by Friday.",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.006,
+          "output_summary": "We require the report to be submitted by Friday.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-003",
+        "category": "generation",
+        "input": "Improve clarity: The project has some issues.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "The project exhibits certain challenges.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 661.0,
+      "steps": {
+        "small_model": 660.9,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 660.928,
+          "output_summary": "The project exhibits certain challenges.",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "The project exhibits certain challenges.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-004",
+        "category": "generation",
+        "input": "Rewrite professionally: Thanks for your help.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "Thank you for your assistance.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 648.0,
+      "steps": {
+        "small_model": 647.9,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 647.932,
+          "output_summary": "Thank you for your assistance.",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.006,
+          "output_summary": "Thank you for your assistance.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-005",
+        "category": "generation",
+        "input": "Make formal: Can you send me the file?",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "Could you please send me the file?",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 706.3,
+      "steps": {
+        "small_model": 706.2,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 706.218,
+          "output_summary": "Could you please send me the file?",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "Could you please send me the file?",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-006",
+        "category": "generation",
+        "input": "Improve tone: This isn't good enough.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "This level of performance is insufficient.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 719.5,
+      "steps": {
+        "small_model": 719.4,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 719.426,
+          "output_summary": "This level of performance is insufficient.",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "This level of performance is insufficient.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-007",
+        "category": "generation",
+        "input": "Rewrite professionally: Let me know when you're free.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "Please let me know your availability.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 756.6,
+      "steps": {
+        "small_model": 756.4,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 756.435,
+          "output_summary": "Please let me know your availability.",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.006,
+          "output_summary": "Please let me know your availability.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 0,
+        "evidence_tokens": 0,
+        "output_tokens": 0,
+        "generation_time_ms": 0,
+        "stop_reason": "unknown",
+        "model_name": "unknown"
+      }
+    }
+  ],
+  "model_invoke_count": 0,
+  "total_wall_ms": 50569.7,
+  "avg_wall_ms": 1685.7,
+  "case_count": 30
+}
