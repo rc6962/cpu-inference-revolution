@@ -138,3 +138,24 @@ def test_retrieval_low_confidence_no_answer():
             return
     # Expected: no retriever trace (routed to small_direct)
     assert result.route == "small_direct"
+
+
+def test_retrieval_sick_days_key_fact():
+    """Verify ret-003: sick days answer contains '10 sick days'."""
+    runtime = Runtime()
+    meta = _get_retrieval_metadata(runtime, "How many sick days does the handbook allow?")
+    assert meta is not None
+    assert meta["selected_source_id"] == "demo-hr-handbook.txt"
+    # The output should contain the key fact
+    result = runtime.execute(Request("ret003", "s", "How many sick days does the handbook allow?"))
+    assert "10 sick days" in result.output.lower()
+
+
+def test_retrieval_vacation_key_fact():
+    """Verify ret-004: vacation answer contains 'vacation'."""
+    runtime = Runtime()
+    meta = _get_retrieval_metadata(runtime, "What is the vacation policy?")
+    assert meta is not None
+    assert meta["selected_source_id"] == "demo-policy.txt"
+    result = runtime.execute(Request("ret004", "s", "What is the vacation policy?"))
+    assert "vacation" in result.output.lower()
