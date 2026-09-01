@@ -177,13 +177,53 @@ def score_results(results_file: str) -> dict:
 
     scored = []
     by_category = {}
+    route_confusion = {}  # expected_route -> {actual_route: count}
+    source_retrieval_correct = 0
+    source_retrieval_total = 0
+    fallback_count = 0
+    real_model_count = 0
+    verification_pass = 0
+    verification_total = 0
 
     for r in results:
         case = r["case"]
         output = r.get("output", "")
         category = case["category"]
+        expected_route = case.get("expected_route", "")
+        actual_route = r.get("route", "")
 
+        # Route accuracy
+        route_correct = (expected_route == actual_route)
+        if expected_route not in route_confusion:
+            route_confusion[expected_route] = {}
+        route_confusion[expected_route][actual_route] = route_confusion[expected_route].get(actual_route, 0) + 1
+
+        # Answer correctness
         score = score_case(case, output)
+
+        # Source retrieval accuracy (retrieval cases only)
+        if category == "retrieval":
+            source_retrieval_total += 1
+            expected_source = case.get("expected_fields", {}).get("source_id", "")
+            if expected_source and expected_source in output:
+                source_retrieval_correct += 1
+
+        # Model fallback detection
+        model_steps = r.get("steps", {})
+        small_model_time = model_steps.get("small_model", 0)
+        # Check if model was actually invoked (non-zero model step time)
+        if small_model_time > 1:  # >1ms means real inference
+            real_model_count += 1
+        else:
+            fallback_count += 1
+
+        # Verification success
+        verifier_time = model_steps.get("verifier", 0)
+        if verifier_time > 0 or category in ("retrieval", "extraction"):
+            verification_total += 1
+            if verifier_time > 0:
+                verification_pass += 1
+
         scored.append({
             "id": case["id"],
             "category": category,
@@ -191,6 +231,11 @@ def score_results(results_file: str) -> dict:
             "reason": score["reason"],
             "strength": score["strength"],
             "limitation": score.get("limitation", ""),
+            "route_correct": route_correct,
+            "expected_route": expected_route,
+            "actual_route": actual_route,
+            "source_retrieval_correct": (expected_source in output) if category == "retrieval" else None,
+            "model_invoked": small_model_time > 1,
         })
 
         if category not in by_category:
@@ -210,7 +255,21 @@ def score_results(results_file: str) -> dict:
             "limitation": data["scores"][0].get("limitation", "") if data["scores"] else "",
         }
 
-    return {"summary": summary, "details": scored}
+    # Route accuracy summary
+    total_route_correct = sum(1 for s in scored if s["route_correct"])
+    route_accuracy = f"{total_route_correct}/{len(scored)} ({total_route_correct/len(scored)*100:.0f}%)"
+
+    return {
+        "summary": summary,
+        "details": scored,
+        "route_accuracy": route_accuracy,
+        "route_confusion": route_confusion,
+        "source_retrieval_accuracy": f"{source_retrieval_correct}/{source_retrieval_total}" if source_retrieval_total > 0 else "N/A",
+        "real_model_count": real_model_count,
+        "fallback_count": fallback_count,
+        "verification_pass": verification_pass,
+        "verification_total": verification_total,
+    }
 
 
 def main():
@@ -234,6 +293,25 @@ def main():
         total_all = sum(d["total"] for d in result["summary"].values())
         print("-" * 50)
         print(f"{'TOTAL':<15} {total_pass:>5} {total_all:>5} {total_pass/total_all*100:>7.0f}%")
+
+        # Route accuracy
+        print(f"\nRoute accuracy: {result['route_accuracy']}")
+        print(f"Source retrieval: {result['source_retrieval_accuracy']}")
+        print(f"Real model calls: {result['real_model_count']}, Fallback: {result['fallback_count']}")
+        if result['verification_total'] > 0:
+            print(f"Verification: {result['verification_pass']}/{result['verification_total']}")
+
+        # Route confusion matrix
+        print(f"\nRoute confusion matrix:")
+        all_routes = sorted(set(r for expected in result["route_confusion"] for r in result["route_confusion"][expected]))
+        header = f"{'Expected':<25}" + "".join(f"{r[:15]:>16}" for r in all_routes)
+        print(header)
+        for expected in sorted(result["route_confusion"]):
+            row = f"{expected:<25}"
+            for actual in all_routes:
+                count = result["route_confusion"][expected].get(actual, 0)
+                row += f"{count:>16}"
+            print(row)
 
         # Print limitations
         print(f"\nScoring limitations:")

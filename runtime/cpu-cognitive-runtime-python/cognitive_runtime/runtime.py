@@ -117,7 +117,7 @@ class RequestAnalyzer(BaseModule):
 
     _calc = re.compile(r"\b(?:calculate|compute|what is|percentage|margin|convert)\b", re.I)
     _invoice = re.compile(r"\b(?:invoice|receipt|vendor|subtotal|tax|due date)\b", re.I)
-    _retrieval = re.compile(r"\b(?:according to|policy|contract|document|lookup|find|what does)\b", re.I)
+    _retrieval = re.compile(r"\b(?:according to|policy|policies|contract|documents?|lookup|find|what does|handbook|sick|vacation|probation|resignation|onboarding|benefits|notice|requirements?|allow)\b", re.I)
     _code = re.compile(r"```|\b(?:python|javascript|sql|api|function|stack trace|bug|compile)\b", re.I)
     _high_risk = re.compile(r"\b(?:medical|diagnos|dosage|legal advice|tax filing|investment|password|credential)\b", re.I)
 
@@ -320,7 +320,8 @@ class SmallModel(BaseModule):
                 answer = f"Based on {evidence.get('source_id', 'the supplied evidence')}: {evidence.get('text', '')}"
             else:
                 answer = f"Demo response for: {context.request.text}"
-            return ModuleResult(self.name, "success", answer, 0.5)
+            return ModuleResult(self.name, "success", answer, 0.5,
+                                metadata={"fallback_used": True, "model_loaded": False, "model_name": self._model_path or "none"})
 
         try:
             user_text = inputs.get("prompt", context.request.text)
@@ -334,6 +335,8 @@ class SmallModel(BaseModule):
             evidence = inputs.get("evidence", {}) if is_retrieval else {}
             source_id = evidence.get("source_id", "the supplied evidence")
             evidence_text = evidence.get("text", "")
+
+            evidence_tokens = len(evidence_text) // 4 if evidence_text else 0
 
             if is_retrieval and evidence_text:
                 messages = [
@@ -350,12 +353,20 @@ class SmallModel(BaseModule):
                     {"role": "user", "content": user_text},
                 ]
 
+            gen_start = time.perf_counter()
             result = self._llm.create_chat_completion(
                 messages=messages,
                 max_tokens=256,
                 temperature=0.0,
             )
+            gen_ms = (time.perf_counter() - gen_start) * 1000
+
             text = result["choices"][0]["message"]["content"].strip()
+            stop_reason = result["choices"][0].get("finish_reason", "unknown")
+            usage = result.get("usage", {})
+            input_tokens = usage.get("prompt_tokens", 0)
+            output_tokens = usage.get("completion_tokens", 0)
+
             if not text:
                 text = f"Demo response for: {context.request.text}"
 
@@ -363,12 +374,23 @@ class SmallModel(BaseModule):
             if is_retrieval and source_id not in text:
                 text = f"Based on {source_id}: {text}"
 
-            return ModuleResult(self.name, "success", text, 0.7)
+            return ModuleResult(self.name, "success", text, 0.7,
+                                metadata={
+                                    "fallback_used": False,
+                                    "model_loaded": True,
+                                    "model_name": self._model_path or "unknown",
+                                    "input_tokens": input_tokens,
+                                    "evidence_tokens": evidence_tokens,
+                                    "output_tokens": output_tokens,
+                                    "generation_time_ms": round(gen_ms, 1),
+                                    "stop_reason": stop_reason,
+                                })
         except Exception as exc:
             return ModuleResult(
                 self.name, "success",
                 f"Demo response for: {context.request.text}",
                 0.5, warnings=[f"LLM inference failed: {exc}"],
+                metadata={"fallback_used": True, "model_loaded": True, "model_name": self._model_path or "unknown", "error": str(exc)},
             )
 
 

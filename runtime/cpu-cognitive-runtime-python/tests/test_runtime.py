@@ -44,3 +44,36 @@ def test_successful_result_is_cached():
     assert first.status == "success"
     assert second.route == "exact_cache"
     assert second.output == first.output
+
+
+# ── Analyzer routing tests ──
+
+def test_retrieval_routing_handbook():
+    runtime = Runtime()
+    result = runtime.execute(Request("a1", "s", "How many sick days does the handbook allow?"))
+    assert result.route == "small_rag"
+
+def test_retrieval_routing_probation():
+    runtime = Runtime()
+    result = runtime.execute(Request("a2", "s", "How does the probation period work?"))
+    assert result.route == "small_rag"
+
+def test_retrieval_routing_onboarding():
+    runtime = Runtime()
+    result = runtime.execute(Request("a3", "s", "What documents are needed for onboarding?"))
+    assert result.route == "small_rag"
+
+def test_retrieval_routing_resignation():
+    runtime = Runtime()
+    result = runtime.execute(Request("a4", "s", "What notice is needed for resignation?"))
+    assert result.route == "small_rag"
+
+def test_retrieval_routing_vacation():
+    runtime = Runtime()
+    result = runtime.execute(Request("a5", "s", "What is the vacation policy?"))
+    assert result.route == "small_rag"
+
+def test_retrieval_routing_requirements():
+    runtime = Runtime()
+    result = runtime.execute(Request("a6", "s", "What are the invoice submission requirements?"))
+    assert result.route == "small_rag"
