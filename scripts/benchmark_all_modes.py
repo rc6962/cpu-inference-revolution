@@ -153,15 +153,50 @@ def run_benchmark(runtime, cases, mode, model_loaded=False):
         wall_ms = (time.perf_counter() - t0) * 1000
         total_wall_ms += wall_ms
 
-        # Count model invocations
+        # Count model invocations and capture metadata
+        small_model_calls = 0
+        real_llm_inferences = 0
+        fallback_responses = 0
+        verification_attempted = False
+        verification_status = "not_attempted"
+        retrieved_source_id = None
+        retrieval_attempted = False
+        retrieval_status = "not_attempted"
+        token_time = {}
+
         for trace in result.traces:
             if trace.module == "small_model":
-                model_invoke_count += 1
+                small_model_calls += 1
+                meta = trace.metadata
+                if meta.get("fallback_used", False):
+                    fallback_responses += 1
+                else:
+                    real_llm_inferences += 1
+                    token_time = {
+                        "input_tokens": meta.get("input_tokens", 0),
+                        "evidence_tokens": meta.get("evidence_tokens", 0),
+                        "output_tokens": meta.get("output_tokens", 0),
+                        "generation_time_ms": meta.get("generation_time_ms", 0),
+                        "stop_reason": meta.get("stop_reason", "unknown"),
+                        "model_name": meta.get("model_name", "unknown"),
+                    }
+            if trace.module == "verifier":
+                verification_attempted = True
+                verification_status = trace.status
+            if trace.module == "document_retriever":
+                retrieval_attempted = True
+                retrieval_status = trace.status
+                # Extract source_id from output_summary using regex
+                import re
+                m = re.search(r"source_id['\"]?\s*:\s*['\"]([^'\"]+)", trace.output_summary)
+                if m:
+                    retrieved_source_id = m.group(1)
 
         # Extract per-step timings
         steps = {}
-        for trace in result.traces:
-            steps[trace.module] = round(trace.cpu_ms, 1)
+        traces_data = trace_to_dict(result)["steps"] if result.traces else []
+        for trace in traces_data:
+            steps[trace["module"]] = round(trace["cpu_ms"], 1)
 
         results.append({
             "case": case,
@@ -170,7 +205,16 @@ def run_benchmark(runtime, cases, mode, model_loaded=False):
             "status": result.status,
             "wall_ms": round(wall_ms, 1),
             "steps": steps,
-            "traces": trace_to_dict(result)["steps"] if result.traces else [],
+            "traces": traces_data,
+            "small_model_calls": small_model_calls,
+            "real_llm_inferences": real_llm_inferences,
+            "fallback_responses": fallback_responses,
+            "verification_attempted": verification_attempted,
+            "verification_status": verification_status,
+            "retrieved_source_id": retrieved_source_id,
+            "retrieval_attempted": retrieval_attempted,
+            "retrieval_status": retrieval_status,
+            "token_time": token_time,
         })
 
         # Clear cache between requests for clean timing

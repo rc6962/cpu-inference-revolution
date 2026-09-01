@@ -205,23 +205,23 @@ def score_results(results_file: str) -> dict:
         if category == "retrieval":
             source_retrieval_total += 1
             expected_source = case.get("expected_fields", {}).get("source_id", "")
-            if expected_source and expected_source in output:
+            actual_source = r.get("retrieved_source_id")
+            if expected_source and actual_source and expected_source == actual_source:
                 source_retrieval_correct += 1
 
-        # Model fallback detection
-        model_steps = r.get("steps", {})
-        small_model_time = model_steps.get("small_model", 0)
-        # Check if model was actually invoked (non-zero model step time)
-        if small_model_time > 1:  # >1ms means real inference
+        # Model call classification (explicit metadata)
+        sm_calls = r.get("small_model_calls", 0)
+        real_llm = r.get("real_llm_inferences", 0)
+        fb = r.get("fallback_responses", 0)
+        if real_llm > 0:
             real_model_count += 1
-        else:
+        elif sm_calls > 0 and fb > 0:
             fallback_count += 1
 
-        # Verification success
-        verifier_time = model_steps.get("verifier", 0)
-        if verifier_time > 0 or category in ("retrieval", "extraction"):
+        # Verification (explicit metadata)
+        if r.get("verification_attempted", False):
             verification_total += 1
-            if verifier_time > 0:
+            if r.get("verification_status") == "success":
                 verification_pass += 1
 
         scored.append({
@@ -235,7 +235,7 @@ def score_results(results_file: str) -> dict:
             "expected_route": expected_route,
             "actual_route": actual_route,
             "source_retrieval_correct": (expected_source in output) if category == "retrieval" else None,
-            "model_invoked": small_model_time > 1,
+            "model_invoked": real_llm > 0,
         })
 
         if category not in by_category:

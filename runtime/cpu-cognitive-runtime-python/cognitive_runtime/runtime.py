@@ -74,6 +74,7 @@ class StepTrace:
     cpu_ms: float
     output_summary: str
     warnings: list[str] = field(default_factory=list)
+    metadata: dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass
@@ -468,7 +469,8 @@ class ExecutionGraph:
             if step.output_key:
                 context.values[step.output_key] = result.output
             context.traces.append(StepTrace(step.step_id, step.module, result.status, cpu_ms,
-                                            _summarize(result.output), result.warnings))
+                                            _summarize(result.output), result.warnings,
+                                            metadata=result.metadata))
 
         output = context.values.get("response", context.values.get("answer"))
         return ExecutionResult(context.request.request_id, "success", output,
@@ -565,6 +567,7 @@ def trace_to_dict(result: ExecutionResult) -> dict[str, Any]:
                 "cpu_ms": round(trace.cpu_ms, 3),
                 "output_summary": trace.output_summary,
                 "warnings": trace.warnings,
+                "metadata": trace.metadata,
             }
             for trace in result.traces
         ],
