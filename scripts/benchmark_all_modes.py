@@ -87,21 +87,81 @@ class ForcedSmallModel:
                 {"role": "system", "content": forced_sys},
                 {"role": "user", "content": user_text},
             ]
+            import time as _time
+            rss_before = self._real._get_rss()
             try:
+                t0 = _time.perf_counter()
                 result = self._real._llm.create_chat_completion(
                     messages=messages, max_tokens=256, temperature=0.0,
                 )
+                wall_ms = (_time.perf_counter() - t0) * 1000
+                rss_after = self._real._get_rss()
                 text = result["choices"][0]["message"]["content"].strip()
+                usage = result.get("usage", {})
+                finish = result["choices"][0].get("finish_reason", "unknown")
                 if not text:
                     text = f"Demo response for: {context.request.text}"
+                model_metrics = {
+                    "model_name": getattr(self._real, '_model_name', 'unknown'),
+                    "model_path_basename": getattr(self._real, '_model_path_basename', ''),
+                    "model_loaded": True,
+                    "model_load_time_ms": None,
+                    "fallback_used": False,
+                    "fallback_reason": None,
+                    "input_tokens": usage.get("prompt_tokens", 0),
+                    "evidence_tokens": 0,
+                    "output_tokens": usage.get("completion_tokens", 0),
+                    "prompt_processing_time_ms": None,
+                    "generation_time_ms": None,
+                    "total_model_time_ms": round(wall_ms, 1),
+                    "time_to_first_token_ms": None,
+                    "stop_reason": finish if finish in ("stop", "length") else "unknown",
+                    "prompt_tokens_per_second": round(usage.get("prompt_tokens", 0) / (wall_ms / 1000), 2) if wall_ms > 0 else None,
+                    "generation_tokens_per_second": round(usage.get("completion_tokens", 0) / (wall_ms / 1000), 2) if wall_ms > 0 else None,
+                    "process_rss_before_bytes": rss_before[0],
+                    "process_rss_after_bytes": rss_after[0],
+                    "process_rss_peak_bytes": rss_after[1],
+                    "rss_measurement_method": rss_before[2],
+                    "metrics_available": True,
+                    "metrics_unavailable_reason": None,
+                }
                 from cognitive_runtime.runtime import ModuleResult
-                return ModuleResult(self.name, "success", text, 0.7)
+                return ModuleResult(
+                    self.name, "success", text, 0.7,
+                    metadata={"model_metrics": model_metrics},
+                )
             except Exception as exc:
+                rss_after = self._real._get_rss()
+                model_metrics = {
+                    "model_name": getattr(self._real, '_model_name', 'unknown'),
+                    "model_path_basename": getattr(self._real, '_model_path_basename', ''),
+                    "model_loaded": self._real._llm is not None,
+                    "model_load_time_ms": None,
+                    "fallback_used": True,
+                    "fallback_reason": f"LLM inference failed: {exc}",
+                    "input_tokens": 0,
+                    "evidence_tokens": 0,
+                    "output_tokens": 0,
+                    "prompt_processing_time_ms": None,
+                    "generation_time_ms": None,
+                    "total_model_time_ms": None,
+                    "time_to_first_token_ms": None,
+                    "stop_reason": "error",
+                    "prompt_tokens_per_second": None,
+                    "generation_tokens_per_second": None,
+                    "process_rss_before_bytes": rss_before[0],
+                    "process_rss_after_bytes": rss_after[0],
+                    "process_rss_peak_bytes": rss_after[1],
+                    "rss_measurement_method": rss_before[2],
+                    "metrics_available": True,
+                    "metrics_unavailable_reason": None,
+                }
                 from cognitive_runtime.runtime import ModuleResult
                 return ModuleResult(
                     self.name, "success",
                     f"Demo response for: {context.request.text}",
                     0.5, warnings=[f"LLM inference failed: {exc}"],
+                    metadata={"model_metrics": model_metrics},
                 )
         # Fallback: use real SmallModel normally
         return self._real.run(context, inputs)
@@ -167,18 +227,20 @@ def run_benchmark(runtime, cases, mode, model_loaded=False):
         for trace in result.traces:
             if trace.module == "small_model":
                 small_model_calls += 1
+                # Prefer model_metrics (Phase 4A); fall back to legacy top-level
                 meta = trace.metadata
-                if meta.get("fallback_used", False):
+                mm = meta.get("model_metrics") or meta  # nested or legacy
+                if mm.get("fallback_used", False):
                     fallback_responses += 1
                 else:
                     real_llm_inferences += 1
                     token_time = {
-                        "input_tokens": meta.get("input_tokens", 0),
-                        "evidence_tokens": meta.get("evidence_tokens", 0),
-                        "output_tokens": meta.get("output_tokens", 0),
-                        "generation_time_ms": meta.get("generation_time_ms", 0),
-                        "stop_reason": meta.get("stop_reason", "unknown"),
-                        "model_name": meta.get("model_name", "unknown"),
+                        "input_tokens": mm.get("input_tokens") or meta.get("input_tokens", 0),
+                        "evidence_tokens": mm.get("evidence_tokens") or meta.get("evidence_tokens", 0),
+                        "output_tokens": mm.get("output_tokens") or meta.get("output_tokens", 0),
+                        "generation_time_ms": mm.get("generation_time_ms") or meta.get("generation_time_ms", 0),
+                        "stop_reason": mm.get("stop_reason") or meta.get("stop_reason", "unknown"),
+                        "model_name": mm.get("model_name") or meta.get("model_name", "unknown"),
                     }
             if trace.module == "verifier":
                 verification_attempted = True

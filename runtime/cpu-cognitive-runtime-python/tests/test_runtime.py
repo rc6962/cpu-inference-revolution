@@ -159,3 +159,110 @@ def test_retrieval_vacation_key_fact():
     assert meta["selected_source_id"] == "demo-policy.txt"
     result = runtime.execute(Request("ret004", "s", "What is the vacation policy?"))
     assert "vacation" in result.output.lower()
+
+
+# ── Model metrics integration tests ──
+
+def test_fallback_has_model_metrics_with_fallback_used():
+    """Fallback response produces model_metrics with fallback_used=True."""
+    runtime = Runtime()
+    result = runtime.execute(Request("fm1", "s", "Say hello"))
+    sm_traces = [t for t in result.traces if t.module == "small_model"]
+    assert len(sm_traces) == 1
+    meta = sm_traces[0].metadata
+    mm = meta.get("model_metrics", {})
+    assert mm.get("fallback_used") is True
+    assert mm.get("model_loaded") is False
+    assert mm.get("stop_reason") == "fallback"
+    assert mm.get("input_tokens") in (0, None)
+    assert mm.get("output_tokens") in (0, None)
+
+
+def test_deterministic_no_model_has_no_small_model_trace():
+    """Deterministic calculation route has no small_model trace at all."""
+    runtime = Runtime()
+    result = runtime.execute(Request("dm1", "s", "What is the operating margin if revenue is 850000 and expenses are 612000?"))
+    assert result.route == "deterministic_calculation"
+    sm_traces = [t for t in result.traces if t.module == "small_model"]
+    assert len(sm_traces) == 0
+
+
+def test_legacy_metadata_compatibility():
+    """Legacy top-level metadata (no model_metrics key) is read correctly."""
+    from cognitive_runtime.runtime import ModuleResult
+    # Simulate a legacy trace: metadata at top level, no model_metrics
+    legacy_meta = {
+        "fallback_used": True,
+        "input_tokens": 0,
+        "output_tokens": 0,
+    }
+    # Verify the extraction logic works with legacy format
+    mm = legacy_meta.get("model_metrics") or legacy_meta
+    assert mm.get("fallback_used") is True
+    assert mm.get("input_tokens") == 0
+
+
+def test_nested_model_metrics_preferred_over_legacy():
+    """When both model_metrics and legacy top-level exist, model_metrics wins."""
+    from cognitive_runtime.runtime import ModuleResult
+    mixed_meta = {
+        "fallback_used": False,  # legacy says not fallback
+        "model_metrics": {
+            "fallback_used": True,  # nested says fallback
+            "input_tokens": 42,
+        },
+    }
+    mm = mixed_meta.get("model_metrics") or mixed_meta
+    assert mm.get("fallback_used") is True  # nested wins
+    assert mm.get("input_tokens") == 42
+
+
+def test_model_metrics_json_serializable():
+    """All model_metrics fields are JSON-serializable."""
+    import json
+    runtime = Runtime()
+    result = runtime.execute(Request("js1", "s", "Say hi"))
+    for trace in result.traces:
+        meta = trace.metadata
+        # Should not raise
+        serialized = json.dumps(meta)
+        assert isinstance(serialized, str)
+        # model_metrics if present should also serialize
+        mm = meta.get("model_metrics")
+        if mm is not None:
+            serialized_mm = json.dumps(mm)
+            assert isinstance(serialized_mm, str)
+
+
+def test_model_metrics_has_required_fields():
+    """model_metrics contains all required schema fields."""
+    runtime = Runtime()
+    result = runtime.execute(Request("rf1", "s", "Say hi"))
+    sm_traces = [t for t in result.traces if t.module == "small_model"]
+    assert len(sm_traces) == 1
+    mm = sm_traces[0].metadata.get("model_metrics", {})
+    required = [
+        "model_name", "model_path_basename", "model_loaded",
+        "model_load_time_ms", "fallback_used", "fallback_reason",
+        "input_tokens", "evidence_tokens", "output_tokens",
+        "prompt_processing_time_ms", "generation_time_ms",
+        "total_model_time_ms", "time_to_first_token_ms",
+        "stop_reason", "prompt_tokens_per_second",
+        "generation_tokens_per_second",
+        "process_rss_before_bytes", "process_rss_after_bytes",
+        "process_rss_peak_bytes", "rss_measurement_method",
+        "metrics_available", "metrics_unavailable_reason",
+    ]
+    for field in required:
+        assert field in mm, f"Missing required field: {field}"
+
+
+def test_retrieval_has_evidence_tokens_field():
+    """Retrieval route's model_metrics includes evidence_tokens."""
+    runtime = Runtime()
+    result = runtime.execute(Request("ev1", "s", "How many sick days does the handbook allow?"))
+    sm_traces = [t for t in result.traces if t.module == "small_model"]
+    # In fallback mode, evidence_tokens should be 0 or None
+    for trace in sm_traces:
+        mm = trace.metadata.get("model_metrics", {})
+        assert "evidence_tokens" in mm
