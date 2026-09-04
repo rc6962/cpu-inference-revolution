@@ -1,0 +1,2498 @@
+{
+  "mode": "forced",
+  "results": [
+    {
+      "case": {
+        "id": "calc-001",
+        "category": "calculation",
+        "input": "Operating margin if revenue 850000 expenses 612000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "28.00%",
+        "expected_fields": {
+          "margin_pct": 28.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "0.34",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 4656.5,
+      "steps": {
+        "small_model": 4656.4,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 4656.385,
+          "output_summary": "0.34",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 52,
+              "evidence_tokens": 0,
+              "output_tokens": 4,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 4201.5,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 12.38,
+              "generation_tokens_per_second": 0.95,
+              "process_rss_before_bytes": 3383455744,
+              "process_rss_after_bytes": 3387219968,
+              "process_rss_peak_bytes": 3387219968,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "0.34",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 52,
+        "evidence_tokens": 0,
+        "output_tokens": 4,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-002",
+        "category": "calculation",
+        "input": "Profit margin if revenue 500000 costs 375000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "25.00%",
+        "expected_fields": {
+          "margin_pct": 25.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "15",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1245.6,
+      "steps": {
+        "small_model": 1245.5,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1245.483,
+          "output_summary": "15",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 52,
+              "evidence_tokens": 0,
+              "output_tokens": 2,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 666.1,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 78.06,
+              "generation_tokens_per_second": 3.0,
+              "process_rss_before_bytes": 3387228160,
+              "process_rss_after_bytes": 3389079552,
+              "process_rss_peak_bytes": 3389079552,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.006,
+          "output_summary": "15",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 52,
+        "evidence_tokens": 0,
+        "output_tokens": 2,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-003",
+        "category": "calculation",
+        "input": "Margin percentage if sales 1200000 expenses 960000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "20.00%",
+        "expected_fields": {
+          "margin_pct": 20.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "25",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1442.5,
+      "steps": {
+        "small_model": 1442.4,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1442.394,
+          "output_summary": "25",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 53,
+              "evidence_tokens": 0,
+              "output_tokens": 2,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 905.4,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 58.53,
+              "generation_tokens_per_second": 2.21,
+              "process_rss_before_bytes": 3389083648,
+              "process_rss_after_bytes": 3390935040,
+              "process_rss_peak_bytes": 3390935040,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "25",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 53,
+        "evidence_tokens": 0,
+        "output_tokens": 2,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-004",
+        "category": "calculation",
+        "input": "Operating margin if revenue 2000000 expenses 1400000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "30.00%",
+        "expected_fields": {
+          "margin_pct": 30.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "60",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1175.2,
+      "steps": {
+        "small_model": 1175.1,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1175.116,
+          "output_summary": "60",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 54,
+              "evidence_tokens": 0,
+              "output_tokens": 2,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 673.8,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 80.14,
+              "generation_tokens_per_second": 2.97,
+              "process_rss_before_bytes": 3390935040,
+              "process_rss_after_bytes": 3392761856,
+              "process_rss_peak_bytes": 3392761856,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "60",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 54,
+        "evidence_tokens": 0,
+        "output_tokens": 2,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-005",
+        "category": "calculation",
+        "input": "Profit margin if revenue 750000 costs 600000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "20.00%",
+        "expected_fields": {
+          "margin_pct": 20.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "20",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1268.8,
+      "steps": {
+        "small_model": 1268.7,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1268.705,
+          "output_summary": "20",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 52,
+              "evidence_tokens": 0,
+              "output_tokens": 2,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 701.4,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 74.14,
+              "generation_tokens_per_second": 2.85,
+              "process_rss_before_bytes": 3392761856,
+              "process_rss_after_bytes": 3394727936,
+              "process_rss_peak_bytes": 3394727936,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "20",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 52,
+        "evidence_tokens": 0,
+        "output_tokens": 2,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-006",
+        "category": "calculation",
+        "input": "Margin if revenue 100000 expenses 85000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "15.00%",
+        "expected_fields": {
+          "margin_pct": 15.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "15000",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1734.6,
+      "steps": {
+        "small_model": 1734.5,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1734.508,
+          "output_summary": "15000",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 50,
+              "evidence_tokens": 0,
+              "output_tokens": 5,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 1174.7,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 42.56,
+              "generation_tokens_per_second": 4.26,
+              "process_rss_before_bytes": 3394727936,
+              "process_rss_after_bytes": 3396562944,
+              "process_rss_peak_bytes": 3396562944,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "15000",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 50,
+        "evidence_tokens": 0,
+        "output_tokens": 5,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-007",
+        "category": "calculation",
+        "input": "Operating margin if revenue 300000 expenses 210000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "30.00%",
+        "expected_fields": {
+          "margin_pct": 30.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "90",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1305.1,
+      "steps": {
+        "small_model": 1305.1,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1305.068,
+          "output_summary": "90",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 52,
+              "evidence_tokens": 0,
+              "output_tokens": 2,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 752.6,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 69.1,
+              "generation_tokens_per_second": 2.66,
+              "process_rss_before_bytes": 3396562944,
+              "process_rss_after_bytes": 3398393856,
+              "process_rss_peak_bytes": 3398393856,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.006,
+          "output_summary": "90",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 52,
+        "evidence_tokens": 0,
+        "output_tokens": 2,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-008",
+        "category": "calculation",
+        "input": "Profit margin if revenue 450000 costs 360000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "20.00%",
+        "expected_fields": {
+          "margin_pct": 20.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "20",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1279.0,
+      "steps": {
+        "small_model": 1279.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1278.962,
+          "output_summary": "20",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 52,
+              "evidence_tokens": 0,
+              "output_tokens": 2,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 743.1,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 69.98,
+              "generation_tokens_per_second": 2.69,
+              "process_rss_before_bytes": 3398393856,
+              "process_rss_after_bytes": 3400220672,
+              "process_rss_peak_bytes": 3400220672,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "20",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 52,
+        "evidence_tokens": 0,
+        "output_tokens": 2,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-001",
+        "category": "retrieval",
+        "input": "According to the policy, how many days notice are required?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-policy.txt",
+          "key_fact": "30 days"
+        },
+        "difficulty": "easy"
+      },
+      "output": "I'm sorry, but the specific number of days required for notice varies greatly depending on the context (e.g., employment, moving, etc.). Could you please provide more details or context about the policy you're referring to?",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 7016.0,
+      "steps": {
+        "small_model": 7016.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 7015.964,
+          "output_summary": "I'm sorry, but the specific number of days required for notice varies greatly depending on the context (e.g., employment, moving, etc.). Could you please provid...",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 37,
+              "evidence_tokens": 0,
+              "output_tokens": 45,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 6451.0,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 5.74,
+              "generation_tokens_per_second": 6.98,
+              "process_rss_before_bytes": 3400220672,
+              "process_rss_after_bytes": 3402289152,
+              "process_rss_peak_bytes": 3402289152,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "I'm sorry, but the specific number of days required for notice varies greatly depending on the context (e.g., employment, moving, etc.). Could you please provid...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 37,
+        "evidence_tokens": 0,
+        "output_tokens": 45,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-002",
+        "category": "retrieval",
+        "input": "What does the contract say about termination?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-contract-templates.txt",
+          "key_fact": "termination"
+        },
+        "difficulty": "easy"
+      },
+      "output": "The contract specifies the conditions under which it can be terminated, including the notice period, breach of contract, or other stipulated reasons. Without specifics, I can't provide exact terms.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 6143.3,
+      "steps": {
+        "small_model": 6143.3,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 6143.292,
+          "output_summary": "The contract specifies the conditions under which it can be terminated, including the notice period, breach of contract, or other stipulated reasons. Without sp...",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 33,
+              "evidence_tokens": 0,
+              "output_tokens": 37,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 5612.1,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 5.88,
+              "generation_tokens_per_second": 6.59,
+              "process_rss_before_bytes": 3402289152,
+              "process_rss_after_bytes": 3404247040,
+              "process_rss_peak_bytes": 3404247040,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "The contract specifies the conditions under which it can be terminated, including the notice period, breach of contract, or other stipulated reasons. Without sp...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 33,
+        "evidence_tokens": 0,
+        "output_tokens": 37,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-003",
+        "category": "retrieval",
+        "input": "How many sick days does the handbook allow?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-hr-handbook.txt",
+          "key_fact": "10 sick days"
+        },
+        "difficulty": "easy"
+      },
+      "output": "I'm sorry, but I don't have enough information to answer your question. Handbooks can vary greatly depending on the organization and location. Could you please provide more details or context?",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 6005.1,
+      "steps": {
+        "small_model": 6005.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 6005.017,
+          "output_summary": "I'm sorry, but I don't have enough information to answer your question. Handbooks can vary greatly depending on the organization and location. Could you please ...",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 34,
+              "evidence_tokens": 0,
+              "output_tokens": 37,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 5386.2,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 6.31,
+              "generation_tokens_per_second": 6.87,
+              "process_rss_before_bytes": 3404247040,
+              "process_rss_after_bytes": 3406139392,
+              "process_rss_peak_bytes": 3406139392,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "I'm sorry, but I don't have enough information to answer your question. Handbooks can vary greatly depending on the organization and location. Could you please ...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 34,
+        "evidence_tokens": 0,
+        "output_tokens": 37,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-004",
+        "category": "retrieval",
+        "input": "What is the vacation policy?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-policy.txt",
+          "key_fact": "vacation"
+        },
+        "difficulty": "easy"
+      },
+      "output": "I'm sorry, but I need more specific information about which company or organization's vacation policy you are referring to. Vacations policies can vary significantly between different employers.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 7041.0,
+      "steps": {
+        "small_model": 7040.9,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 7040.925,
+          "output_summary": "I'm sorry, but I need more specific information about which company or organization's vacation policy you are referring to. Vacations policies can vary signific...",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 31,
+              "evidence_tokens": 0,
+              "output_tokens": 33,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 6350.2,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 4.88,
+              "generation_tokens_per_second": 5.2,
+              "process_rss_before_bytes": 3406139392,
+              "process_rss_after_bytes": 3408031744,
+              "process_rss_peak_bytes": 3408031744,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "I'm sorry, but I need more specific information about which company or organization's vacation policy you are referring to. Vacations policies can vary signific...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 31,
+        "evidence_tokens": 0,
+        "output_tokens": 33,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-005",
+        "category": "retrieval",
+        "input": "What are the invoice submission requirements?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-invoice-spec.txt",
+          "key_fact": "invoice"
+        },
+        "difficulty": "easy"
+      },
+      "output": "Invoice submission requirements can vary depending on the company or organization, but generally include:\n\n1. Completeness: All required information must be included.\n2. Accuracy: Data must be correct and up-to-date.\n3. Timeliness: Submission must be made within the specified timeframe.\n4. Format: Invoices should be in the required format (e.g., PDF, digital file).\n5. Supporting documentation: For certain transactions, additional supporting documents may be required.\n6. Compliance: Adherence to legal and regulatory requirements.\n\nFor specific requirements, please check with your company's accounting or finance department.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 18715.2,
+      "steps": {
+        "small_model": 18715.1,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 18715.095,
+          "output_summary": "Invoice submission requirements can vary depending on the company or organization, but generally include:\n\n1. Completeness: All required information must be inc...",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 32,
+              "evidence_tokens": 0,
+              "output_tokens": 119,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 18082.2,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 1.77,
+              "generation_tokens_per_second": 6.58,
+              "process_rss_before_bytes": 3408031744,
+              "process_rss_after_bytes": 3410092032,
+              "process_rss_peak_bytes": 3410092032,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "Invoice submission requirements can vary depending on the company or organization, but generally include:\n\n1. Completeness: All required information must be inc...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 32,
+        "evidence_tokens": 0,
+        "output_tokens": 119,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-006",
+        "category": "retrieval",
+        "input": "How does the probation period work?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-hr-handbook.txt",
+          "key_fact": "probation"
+        },
+        "difficulty": "easy"
+      },
+      "output": "The probation period is a specified time frame during which an employee is evaluated to determine their suitability for continued employment. It typically lasts between one to twelve months, and during this period, the employee's performance, behavior, and adherence to company policies are closely monitored. If the employee meets the criteria set by the employer, they may be extended to continue employment. If not, the employer may terminate the employment.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 13599.2,
+      "steps": {
+        "small_model": 13599.1,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 13599.115,
+          "output_summary": "The probation period is a specified time frame during which an employee is evaluated to determine their suitability for continued employment. It typically lasts...",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 32,
+              "evidence_tokens": 0,
+              "output_tokens": 81,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 12997.0,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 2.46,
+              "generation_tokens_per_second": 6.23,
+              "process_rss_before_bytes": 3410092032,
+              "process_rss_after_bytes": 3412103168,
+              "process_rss_peak_bytes": 3412103168,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "The probation period is a specified time frame during which an employee is evaluated to determine their suitability for continued employment. It typically lasts...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 32,
+        "evidence_tokens": 0,
+        "output_tokens": 81,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-007",
+        "category": "retrieval",
+        "input": "What notice is needed for resignation?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-policy.txt",
+          "key_fact": "30 days"
+        },
+        "difficulty": "easy"
+      },
+      "output": "A formal notice of resignation typically requires a letter or email to inform the employer of the intention to leave. The specific notice period (how long in advance) can vary depending on the employer's policy and the nature of the job.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 9115.4,
+      "steps": {
+        "small_model": 9115.3,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 9115.319,
+          "output_summary": "A formal notice of resignation typically requires a letter or email to inform the employer of the intention to leave. The specific notice period (how long in ad...",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 32,
+              "evidence_tokens": 0,
+              "output_tokens": 46,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 8522.6,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 3.75,
+              "generation_tokens_per_second": 5.4,
+              "process_rss_before_bytes": 3412103168,
+              "process_rss_after_bytes": 3414024192,
+              "process_rss_peak_bytes": 3414024192,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "A formal notice of resignation typically requires a letter or email to inform the employer of the intention to leave. The specific notice period (how long in ad...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 32,
+        "evidence_tokens": 0,
+        "output_tokens": 46,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-008",
+        "category": "retrieval",
+        "input": "What documents are needed for onboarding?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-hr-handbook.txt",
+          "key_fact": "onboarding"
+        },
+        "difficulty": "easy"
+      },
+      "output": "For onboarding, common documents needed may include a job offer letter, employment contract, ID proof, social security number, and sometimes a background check report. Specific documents can vary depending on the company and country.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 8534.0,
+      "steps": {
+        "small_model": 8534.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 8533.973,
+          "output_summary": "For onboarding, common documents needed may include a job offer letter, employment contract, ID proof, social security number, and sometimes a background check ...",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 33,
+              "evidence_tokens": 0,
+              "output_tokens": 42,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 7827.3,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 4.22,
+              "generation_tokens_per_second": 5.37,
+              "process_rss_before_bytes": 3414024192,
+              "process_rss_after_bytes": 3415920640,
+              "process_rss_peak_bytes": 3415920640,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "For onboarding, common documents needed may include a job offer letter, employment contract, ID proof, social security number, and sometimes a background check ...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 33,
+        "evidence_tokens": 0,
+        "output_tokens": 42,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-001",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Acme, Tax 45, Total 245",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Acme\", \"tax\": 45.0, \"total\": 245.0}",
+        "expected_fields": {
+          "vendor": "Acme",
+          "tax": 45.0,
+          "total": 245.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Acme\", \"tax\": 45, \"total\": 245}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 4932.4,
+      "steps": {
+        "small_model": 4932.4,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 4932.381,
+          "output_summary": "{\"vendor\": \"Acme\", \"tax\": 45, \"total\": 245}",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 67,
+              "evidence_tokens": 0,
+              "output_tokens": 22,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 4345.1,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 15.42,
+              "generation_tokens_per_second": 5.06,
+              "process_rss_before_bytes": 3415920640,
+              "process_rss_after_bytes": 3420983296,
+              "process_rss_peak_bytes": 3420983296,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "{\"vendor\": \"Acme\", \"tax\": 45, \"total\": 245}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 67,
+        "evidence_tokens": 0,
+        "output_tokens": 22,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-002",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Beta Inc, Tax 12.50, Total 62.50",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Beta Inc\", \"tax\": 12.5, \"total\": 62.5}",
+        "expected_fields": {
+          "vendor": "Beta Inc",
+          "tax": 12.5,
+          "total": 62.5
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Beta Inc\", \"tax\": 12.5, \"total\": 62.5}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 4793.5,
+      "steps": {
+        "small_model": 4793.5,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 4793.482,
+          "output_summary": "{\"vendor\": \"Beta Inc\", \"tax\": 12.5, \"total\": 62.5}",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 72,
+              "evidence_tokens": 0,
+              "output_tokens": 25,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 4152.4,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 17.34,
+              "generation_tokens_per_second": 6.02,
+              "process_rss_before_bytes": 3420987392,
+              "process_rss_after_bytes": 3422830592,
+              "process_rss_peak_bytes": 3422830592,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "{\"vendor\": \"Beta Inc\", \"tax\": 12.5, \"total\": 62.5}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 72,
+        "evidence_tokens": 0,
+        "output_tokens": 25,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-003",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Gamma Co, Tax 88, Total 488",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Gamma Co\", \"tax\": 88.0, \"total\": 488.0}",
+        "expected_fields": {
+          "vendor": "Gamma Co",
+          "tax": 88.0,
+          "total": 488.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Gamma Co\", \"tax\": 88, \"total\": 488}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 5442.1,
+      "steps": {
+        "small_model": 5442.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 5441.997,
+          "output_summary": "{\"vendor\": \"Gamma Co\", \"tax\": 88, \"total\": 488}",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 67,
+              "evidence_tokens": 0,
+              "output_tokens": 22,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 4714.8,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 14.21,
+              "generation_tokens_per_second": 4.67,
+              "process_rss_before_bytes": 3422830592,
+              "process_rss_after_bytes": 3424718848,
+              "process_rss_peak_bytes": 3424718848,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "{\"vendor\": \"Gamma Co\", \"tax\": 88, \"total\": 488}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 67,
+        "evidence_tokens": 0,
+        "output_tokens": 22,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-004",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Delta LLC, Tax 33.00, Total 183.00",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Delta LLC\", \"tax\": 33.0, \"total\": 183.0}",
+        "expected_fields": {
+          "vendor": "Delta LLC",
+          "tax": 33.0,
+          "total": 183.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Delta LLC\", \"tax\": \"33.00\", \"total\": \"183.00\"}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 6124.4,
+      "steps": {
+        "small_model": 6124.3,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 6124.335,
+          "output_summary": "{\"vendor\": \"Delta LLC\", \"tax\": \"33.00\", \"total\": \"183.00\"}",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 73,
+              "evidence_tokens": 0,
+              "output_tokens": 28,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 5364.4,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 13.61,
+              "generation_tokens_per_second": 5.22,
+              "process_rss_before_bytes": 3424718848,
+              "process_rss_after_bytes": 3426562048,
+              "process_rss_peak_bytes": 3426562048,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.005,
+          "output_summary": "{\"vendor\": \"Delta LLC\", \"tax\": \"33.00\", \"total\": \"183.00\"}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 73,
+        "evidence_tokens": 0,
+        "output_tokens": 28,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-005",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Epsilon, Tax 5.25, Total 27.75",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Epsilon\", \"tax\": 5.25, \"total\": 27.75}",
+        "expected_fields": {
+          "vendor": "Epsilon",
+          "tax": 5.25,
+          "total": 27.75
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Epsilon\", \"tax\": 5.25, \"total\": 27.75}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 7503.7,
+      "steps": {
+        "small_model": 7503.6,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 7503.621,
+          "output_summary": "{\"vendor\": \"Epsilon\", \"tax\": 5.25, \"total\": 27.75}",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 71,
+              "evidence_tokens": 0,
+              "output_tokens": 26,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 6781.6,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 10.47,
+              "generation_tokens_per_second": 3.83,
+              "process_rss_before_bytes": 3426566144,
+              "process_rss_after_bytes": 3428421632,
+              "process_rss_peak_bytes": 3428421632,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "{\"vendor\": \"Epsilon\", \"tax\": 5.25, \"total\": 27.75}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 71,
+        "evidence_tokens": 0,
+        "output_tokens": 26,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-006",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Zeta Corp, Tax 120, Total 720",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Zeta Corp\", \"tax\": 120.0, \"total\": 720.0}",
+        "expected_fields": {
+          "vendor": "Zeta Corp",
+          "tax": 120.0,
+          "total": 720.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Zeta Corp\", \"tax\": 120, \"total\": 720}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 7331.7,
+      "steps": {
+        "small_model": 7331.7,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 7331.679,
+          "output_summary": "{\"vendor\": \"Zeta Corp\", \"tax\": 120, \"total\": 720}",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 69,
+              "evidence_tokens": 0,
+              "output_tokens": 24,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 6722.9,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 10.26,
+              "generation_tokens_per_second": 3.57,
+              "process_rss_before_bytes": 3428421632,
+              "process_rss_after_bytes": 3430354944,
+              "process_rss_peak_bytes": 3430354944,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "{\"vendor\": \"Zeta Corp\", \"tax\": 120, \"total\": 720}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 69,
+        "evidence_tokens": 0,
+        "output_tokens": 24,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-007",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Eta Inc, Tax 0, Total 50",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Eta Inc\", \"tax\": 0.0, \"total\": 50.0}",
+        "expected_fields": {
+          "vendor": "Eta Inc",
+          "tax": 0.0,
+          "total": 50.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Eta Inc\", \"tax\": 0, \"total\": 50}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 5690.3,
+      "steps": {
+        "small_model": 5690.2,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 5690.211,
+          "output_summary": "{\"vendor\": \"Eta Inc\", \"tax\": 0, \"total\": 50}",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 66,
+              "evidence_tokens": 0,
+              "output_tokens": 20,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 5082.2,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 12.99,
+              "generation_tokens_per_second": 3.94,
+              "process_rss_before_bytes": 3430354944,
+              "process_rss_after_bytes": 3432214528,
+              "process_rss_peak_bytes": 3432214528,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "{\"vendor\": \"Eta Inc\", \"tax\": 0, \"total\": 50}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 66,
+        "evidence_tokens": 0,
+        "output_tokens": 20,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-001",
+        "category": "generation",
+        "input": "Rewrite to sound professional: The meeting went okay.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "The meeting proceeded as anticipated.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 3028.9,
+      "steps": {
+        "small_model": 3028.8,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 3028.79,
+          "output_summary": "The meeting proceeded as anticipated.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 46,
+              "evidence_tokens": 0,
+              "output_tokens": 6,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 2409.8,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 19.09,
+              "generation_tokens_per_second": 2.49,
+              "process_rss_before_bytes": 3432214528,
+              "process_rss_after_bytes": 3434135552,
+              "process_rss_peak_bytes": 3434135552,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "The meeting proceeded as anticipated.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 46,
+        "evidence_tokens": 0,
+        "output_tokens": 6,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-002",
+        "category": "generation",
+        "input": "Make formal: We need the report by Friday.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "We require the report by Friday.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 2541.1,
+      "steps": {
+        "small_model": 2541.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 2540.952,
+          "output_summary": "We require the report by Friday.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 45,
+              "evidence_tokens": 0,
+              "output_tokens": 7,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 1962.1,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 22.93,
+              "generation_tokens_per_second": 3.57,
+              "process_rss_before_bytes": 3434135552,
+              "process_rss_after_bytes": 3392147456,
+              "process_rss_peak_bytes": 3392147456,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "We require the report by Friday.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 45,
+        "evidence_tokens": 0,
+        "output_tokens": 7,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-003",
+        "category": "generation",
+        "input": "Improve clarity: The project has some issues.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "The project contains some issues.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 2279.1,
+      "steps": {
+        "small_model": 2279.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 2278.986,
+          "output_summary": "The project contains some issues.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 45,
+              "evidence_tokens": 0,
+              "output_tokens": 6,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 1502.1,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 29.96,
+              "generation_tokens_per_second": 3.99,
+              "process_rss_before_bytes": 3392147456,
+              "process_rss_after_bytes": 3394002944,
+              "process_rss_peak_bytes": 3394002944,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.005,
+          "output_summary": "The project contains some issues.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 45,
+        "evidence_tokens": 0,
+        "output_tokens": 6,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-004",
+        "category": "generation",
+        "input": "Rewrite professionally: Thanks for your help.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "Thank you for your assistance.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1885.9,
+      "steps": {
+        "small_model": 1885.7,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1885.749,
+          "output_summary": "Thank you for your assistance.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 44,
+              "evidence_tokens": 0,
+              "output_tokens": 6,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 1283.5,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 34.28,
+              "generation_tokens_per_second": 4.67,
+              "process_rss_before_bytes": 3394002944,
+              "process_rss_after_bytes": 3395862528,
+              "process_rss_peak_bytes": 3395862528,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "Thank you for your assistance.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 44,
+        "evidence_tokens": 0,
+        "output_tokens": 6,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-005",
+        "category": "generation",
+        "input": "Make formal: Can you send me the file?",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "Could you please send me the file?",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 2702.0,
+      "steps": {
+        "small_model": 2701.9,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 2701.948,
+          "output_summary": "Could you please send me the file?",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 45,
+              "evidence_tokens": 0,
+              "output_tokens": 8,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 2140.5,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 21.02,
+              "generation_tokens_per_second": 3.74,
+              "process_rss_before_bytes": 3395862528,
+              "process_rss_after_bytes": 3397718016,
+              "process_rss_peak_bytes": 3397718016,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "Could you please send me the file?",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 45,
+        "evidence_tokens": 0,
+        "output_tokens": 8,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-006",
+        "category": "generation",
+        "input": "Improve tone: This isn't good enough.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "This does not meet the required standard.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 2490.5,
+      "steps": {
+        "small_model": 2490.4,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 2490.442,
+          "output_summary": "This does not meet the required standard.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 45,
+              "evidence_tokens": 0,
+              "output_tokens": 8,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 1930.2,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 23.31,
+              "generation_tokens_per_second": 4.14,
+              "process_rss_before_bytes": 3397722112,
+              "process_rss_after_bytes": 3399593984,
+              "process_rss_peak_bytes": 3399593984,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "This does not meet the required standard.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 45,
+        "evidence_tokens": 0,
+        "output_tokens": 8,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-007",
+        "category": "generation",
+        "input": "Rewrite professionally: Let me know when you're free.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "Please inform me of your availability.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 2625.1,
+      "steps": {
+        "small_model": 2625.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 2624.989,
+          "output_summary": "Please inform me of your availability.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "unknown",
+              "model_path_basename": "",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 47,
+              "evidence_tokens": 0,
+              "output_tokens": 7,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 1977.8,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 23.76,
+              "generation_tokens_per_second": 3.54,
+              "process_rss_before_bytes": 3399593984,
+              "process_rss_after_bytes": 3401453568,
+              "process_rss_peak_bytes": 3401453568,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "Please inform me of your availability.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 47,
+        "evidence_tokens": 0,
+        "output_tokens": 7,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "unknown"
+      }
+    }
+  ],
+  "model_invoke_count": 0,
+  "total_wall_ms": 149647.2,
+  "avg_wall_ms": 4988.2,
+  "case_count": 30
+}

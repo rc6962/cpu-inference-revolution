@@ -1,0 +1,2374 @@
+{
+  "mode": "fallback",
+  "results": [
+    {
+      "case": {
+        "id": "calc-001",
+        "category": "calculation",
+        "input": "Operating margin if revenue 850000 expenses 612000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "28.00%",
+        "expected_fields": {
+          "margin_pct": 28.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "28.00%",
+      "route": "deterministic_calculation",
+      "status": "success",
+      "wall_ms": 0.8,
+      "steps": {
+        "calculator": 0.5,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "calculate",
+          "module": "calculator",
+          "status": "success",
+          "cpu_ms": 0.464,
+          "output_summary": "{'expression': '(850000 - 612000) / 850000', 'result': 0.28, 'formatted_result': '28.00%'}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "28.00%",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 0,
+      "real_llm_inferences": 0,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "calc-002",
+        "category": "calculation",
+        "input": "Profit margin if revenue 500000 costs 375000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "25.00%",
+        "expected_fields": {
+          "margin_pct": 25.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "25.00%",
+      "route": "deterministic_calculation",
+      "status": "success",
+      "wall_ms": 0.1,
+      "steps": {
+        "calculator": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "calculate",
+          "module": "calculator",
+          "status": "success",
+          "cpu_ms": 0.011,
+          "output_summary": "{'expression': '(500000 - 375000) / 500000', 'result': 0.25, 'formatted_result': '25.00%'}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.001,
+          "output_summary": "25.00%",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 0,
+      "real_llm_inferences": 0,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "calc-003",
+        "category": "calculation",
+        "input": "Margin percentage if sales 1200000 expenses 960000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "20.00%",
+        "expected_fields": {
+          "margin_pct": 20.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "20.00%",
+      "route": "deterministic_calculation",
+      "status": "success",
+      "wall_ms": 0.0,
+      "steps": {
+        "calculator": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "calculate",
+          "module": "calculator",
+          "status": "success",
+          "cpu_ms": 0.009,
+          "output_summary": "{'expression': '(1200000 - 960000) / 1200000', 'result': 0.2, 'formatted_result': '20.00%'}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "20.00%",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 0,
+      "real_llm_inferences": 0,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "calc-004",
+        "category": "calculation",
+        "input": "Operating margin if revenue 2000000 expenses 1400000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "30.00%",
+        "expected_fields": {
+          "margin_pct": 30.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "30.00%",
+      "route": "deterministic_calculation",
+      "status": "success",
+      "wall_ms": 0.0,
+      "steps": {
+        "calculator": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "calculate",
+          "module": "calculator",
+          "status": "success",
+          "cpu_ms": 0.008,
+          "output_summary": "{'expression': '(2000000 - 1400000) / 2000000', 'result': 0.3, 'formatted_result': '30.00%'}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.001,
+          "output_summary": "30.00%",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 0,
+      "real_llm_inferences": 0,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "calc-005",
+        "category": "calculation",
+        "input": "Profit margin if revenue 750000 costs 600000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "20.00%",
+        "expected_fields": {
+          "margin_pct": 20.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "20.00%",
+      "route": "deterministic_calculation",
+      "status": "success",
+      "wall_ms": 0.0,
+      "steps": {
+        "calculator": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "calculate",
+          "module": "calculator",
+          "status": "success",
+          "cpu_ms": 0.007,
+          "output_summary": "{'expression': '(750000 - 600000) / 750000', 'result': 0.2, 'formatted_result': '20.00%'}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.001,
+          "output_summary": "20.00%",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 0,
+      "real_llm_inferences": 0,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "calc-006",
+        "category": "calculation",
+        "input": "Margin if revenue 100000 expenses 85000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "15.00%",
+        "expected_fields": {
+          "margin_pct": 15.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "15.00%",
+      "route": "deterministic_calculation",
+      "status": "success",
+      "wall_ms": 0.0,
+      "steps": {
+        "calculator": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "calculate",
+          "module": "calculator",
+          "status": "success",
+          "cpu_ms": 0.007,
+          "output_summary": "{'expression': '(100000 - 85000) / 100000', 'result': 0.15, 'formatted_result': '15.00%'}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.001,
+          "output_summary": "15.00%",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 0,
+      "real_llm_inferences": 0,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "calc-007",
+        "category": "calculation",
+        "input": "Operating margin if revenue 300000 expenses 210000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "30.00%",
+        "expected_fields": {
+          "margin_pct": 30.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "30.00%",
+      "route": "deterministic_calculation",
+      "status": "success",
+      "wall_ms": 0.0,
+      "steps": {
+        "calculator": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "calculate",
+          "module": "calculator",
+          "status": "success",
+          "cpu_ms": 0.007,
+          "output_summary": "{'expression': '(300000 - 210000) / 300000', 'result': 0.3, 'formatted_result': '30.00%'}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.001,
+          "output_summary": "30.00%",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 0,
+      "real_llm_inferences": 0,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "calc-008",
+        "category": "calculation",
+        "input": "Profit margin if revenue 450000 costs 360000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "20.00%",
+        "expected_fields": {
+          "margin_pct": 20.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "20.00%",
+      "route": "deterministic_calculation",
+      "status": "success",
+      "wall_ms": 0.0,
+      "steps": {
+        "calculator": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "calculate",
+          "module": "calculator",
+          "status": "success",
+          "cpu_ms": 0.009,
+          "output_summary": "{'expression': '(450000 - 360000) / 450000', 'result': 0.2, 'formatted_result': '20.00%'}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "20.00%",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 0,
+      "real_llm_inferences": 0,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "ret-001",
+        "category": "retrieval",
+        "input": "According to the policy, how many days notice are required?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-policy.txt",
+          "key_fact": "30 days"
+        },
+        "difficulty": "easy"
+      },
+      "output": "Based on demo-policy.txt: Company leave policy: Employees are required to provide 30 days written notice for resignation. For bereavement leave, 5 days notice is required. Annual leave requires 14 days advance notice.",
+      "route": "small_rag",
+      "status": "success",
+      "wall_ms": 632.8,
+      "steps": {
+        "document_retriever": 8.5,
+        "small_model": 624.2,
+        "verifier": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "retrieve",
+          "module": "document_retriever",
+          "status": "success",
+          "cpu_ms": 8.533,
+          "output_summary": "{'source_id': 'demo-policy.txt', 'location': 'local', 'text': 'Company leave policy: Employees are required to provide 30 days written notice for resignation. F...",
+          "warnings": [],
+          "metadata": {
+            "raw_query": "According to the policy, how many days notice are required?",
+            "normalized_query": "policy days notice required",
+            "fts_query": "policy OR days OR notice OR required",
+            "phrases_detected": [],
+            "top_k_candidates": [
+              {
+                "source_id": "demo-policy.txt",
+                "bm25_rank": -2.47,
+                "rerank_score": 1.25,
+                "text_excerpt": "Company leave policy: Employees are required to provide 30 days written notice f"
+              },
+              {
+                "source_id": "demo-contract-templates.txt",
+                "bm25_rank": -1.48,
+                "rerank_score": 0.65,
+                "text_excerpt": "Service agreement terms: Contracts are effective for 12 months from the date of "
+              },
+              {
+                "source_id": "demo-policy.txt",
+                "bm25_rank": -0.0,
+                "rerank_score": 0.5,
+                "text_excerpt": "Sick leave policy: Employees may take up to 10 sick days per year. A medical cer"
+              }
+            ],
+            "selected_source_id": "demo-policy.txt",
+            "retrieval_status": "success",
+            "evidence_sufficient": true,
+            "retrieval_warnings": []
+          }
+        },
+        {
+          "step_id": "answer",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 624.206,
+          "output_summary": "Based on demo-policy.txt: Company leave policy: Employees are required to provide 30 days written notice for resignation. For bereavement leave, 5 days notice i...",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": null,
+              "model_path_basename": null,
+              "model_loaded": false,
+              "model_load_time_ms": null,
+              "fallback_used": true,
+              "fallback_reason": "no_model_configured",
+              "input_tokens": null,
+              "evidence_tokens": null,
+              "output_tokens": null,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": null,
+              "time_to_first_token_ms": null,
+              "stop_reason": "fallback",
+              "prompt_tokens_per_second": null,
+              "generation_tokens_per_second": null,
+              "process_rss_before_bytes": 24174592,
+              "process_rss_after_bytes": 24190976,
+              "process_rss_peak_bytes": 24190976,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": false,
+              "metrics_unavailable_reason": "model not loaded"
+            }
+          }
+        },
+        {
+          "step_id": "verify",
+          "module": "verifier",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "{'verified': True}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "Based on demo-policy.txt: Company leave policy: Employees are required to provide 30 days written notice for resignation. For bereavement leave, 5 days notice i...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 0,
+      "fallback_responses": 1,
+      "verification_attempted": true,
+      "verification_status": "success",
+      "retrieved_source_id": "demo-policy.txt",
+      "retrieval_attempted": true,
+      "retrieval_status": "success",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "ret-002",
+        "category": "retrieval",
+        "input": "What does the contract say about termination?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-contract-templates.txt",
+          "key_fact": "termination"
+        },
+        "difficulty": "easy"
+      },
+      "output": "Based on demo-contract-templates.txt: Non-disclosure agreement: The receiving party agrees to maintain confidentiality of all proprietary information for a period of 5 years after termination of the agreement. This includes trade secrets, client lists, and financial data.",
+      "route": "small_rag",
+      "status": "success",
+      "wall_ms": 406.1,
+      "steps": {
+        "document_retriever": 1.0,
+        "small_model": 405.0,
+        "verifier": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "retrieve",
+          "module": "document_retriever",
+          "status": "success",
+          "cpu_ms": 0.954,
+          "output_summary": "{'source_id': 'demo-contract-templates.txt', 'location': 'local', 'text': 'Non-disclosure agreement: The receiving party agrees to maintain confidentiality of a...",
+          "warnings": [],
+          "metadata": {
+            "raw_query": "What does the contract say about termination?",
+            "normalized_query": "contract say about termination",
+            "fts_query": "contract OR say OR about OR termination",
+            "phrases_detected": [
+              "termination",
+              "contract"
+            ],
+            "top_k_candidates": [
+              {
+                "source_id": "demo-contract-templates.txt",
+                "bm25_rank": -2.6,
+                "rerank_score": 5.26,
+                "text_excerpt": "Non-disclosure agreement: The receiving party agrees to maintain confidentiality"
+              },
+              {
+                "source_id": "demo-contract-templates.txt",
+                "bm25_rank": -3.12,
+                "rerank_score": 3.31,
+                "text_excerpt": "Service agreement terms: Contracts are effective for 12 months from the date of "
+              },
+              {
+                "source_id": "demo-policy.txt",
+                "bm25_rank": -1.09,
+                "rerank_score": 2.11,
+                "text_excerpt": "Remote work policy: Employees may work remotely up to 3 days per week with manag"
+              }
+            ],
+            "selected_source_id": "demo-contract-templates.txt",
+            "retrieval_status": "success",
+            "evidence_sufficient": true,
+            "retrieval_warnings": []
+          }
+        },
+        {
+          "step_id": "answer",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 405.029,
+          "output_summary": "Based on demo-contract-templates.txt: Non-disclosure agreement: The receiving party agrees to maintain confidentiality of all proprietary information for a peri...",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": null,
+              "model_path_basename": null,
+              "model_loaded": false,
+              "model_load_time_ms": null,
+              "fallback_used": true,
+              "fallback_reason": "no_model_configured",
+              "input_tokens": null,
+              "evidence_tokens": null,
+              "output_tokens": null,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": null,
+              "time_to_first_token_ms": null,
+              "stop_reason": "fallback",
+              "prompt_tokens_per_second": null,
+              "generation_tokens_per_second": null,
+              "process_rss_before_bytes": 24367104,
+              "process_rss_after_bytes": 24371200,
+              "process_rss_peak_bytes": 24371200,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": false,
+              "metrics_unavailable_reason": "model not loaded"
+            }
+          }
+        },
+        {
+          "step_id": "verify",
+          "module": "verifier",
+          "status": "success",
+          "cpu_ms": 0.02,
+          "output_summary": "{'verified': True}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "Based on demo-contract-templates.txt: Non-disclosure agreement: The receiving party agrees to maintain confidentiality of all proprietary information for a peri...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 0,
+      "fallback_responses": 1,
+      "verification_attempted": true,
+      "verification_status": "success",
+      "retrieved_source_id": "demo-contract-templates.txt",
+      "retrieval_attempted": true,
+      "retrieval_status": "success",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "ret-003",
+        "category": "retrieval",
+        "input": "How many sick days does the handbook allow?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-hr-handbook.txt",
+          "key_fact": "10 sick days"
+        },
+        "difficulty": "easy"
+      },
+      "output": "Based on demo-hr-handbook.txt: Sick leave policy: Employees may take up to 10 sick days per year. A medical certificate is required for absences exceeding 3 consecutive days. Sick days cannot be carried over.",
+      "route": "small_rag",
+      "status": "success",
+      "wall_ms": 490.5,
+      "steps": {
+        "document_retriever": 1.1,
+        "small_model": 489.4,
+        "verifier": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "retrieve",
+          "module": "document_retriever",
+          "status": "success",
+          "cpu_ms": 1.063,
+          "output_summary": "{'source_id': 'demo-hr-handbook.txt', 'location': 'local', 'text': 'Sick leave policy: Employees may take up to 10 sick days per year. A medical certificate is ...",
+          "warnings": [],
+          "metadata": {
+            "raw_query": "How many sick days does the handbook allow?",
+            "normalized_query": "sick days handbook allow",
+            "fts_query": "sick OR days OR handbook OR allow",
+            "phrases_detected": [
+              "sick days",
+              "handbook"
+            ],
+            "top_k_candidates": [
+              {
+                "source_id": "demo-hr-handbook.txt",
+                "bm25_rank": -3.22,
+                "rerank_score": 6.32,
+                "text_excerpt": "Sick leave policy: Employees may take up to 10 sick days per year. A medical cer"
+              },
+              {
+                "source_id": "demo-hr-handbook.txt",
+                "bm25_rank": -0.97,
+                "rerank_score": 3.6,
+                "text_excerpt": "Onboarding process: New employees must complete I-9 verification, sign the emplo"
+              },
+              {
+                "source_id": "demo-hr-handbook.txt",
+                "bm25_rank": -0.74,
+                "rerank_score": 3.57,
+                "text_excerpt": "Benefits eligibility: Full-time employees are eligible for health insurance, den"
+              }
+            ],
+            "selected_source_id": "demo-hr-handbook.txt",
+            "retrieval_status": "success",
+            "evidence_sufficient": true,
+            "retrieval_warnings": []
+          }
+        },
+        {
+          "step_id": "answer",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 489.362,
+          "output_summary": "Based on demo-hr-handbook.txt: Sick leave policy: Employees may take up to 10 sick days per year. A medical certificate is required for absences exceeding 3 con...",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": null,
+              "model_path_basename": null,
+              "model_loaded": false,
+              "model_load_time_ms": null,
+              "fallback_used": true,
+              "fallback_reason": "no_model_configured",
+              "input_tokens": null,
+              "evidence_tokens": null,
+              "output_tokens": null,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": null,
+              "time_to_first_token_ms": null,
+              "stop_reason": "fallback",
+              "prompt_tokens_per_second": null,
+              "generation_tokens_per_second": null,
+              "process_rss_before_bytes": 24383488,
+              "process_rss_after_bytes": 24383488,
+              "process_rss_peak_bytes": 24383488,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": false,
+              "metrics_unavailable_reason": "model not loaded"
+            }
+          }
+        },
+        {
+          "step_id": "verify",
+          "module": "verifier",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "{'verified': True}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.001,
+          "output_summary": "Based on demo-hr-handbook.txt: Sick leave policy: Employees may take up to 10 sick days per year. A medical certificate is required for absences exceeding 3 con...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 0,
+      "fallback_responses": 1,
+      "verification_attempted": true,
+      "verification_status": "success",
+      "retrieved_source_id": "demo-hr-handbook.txt",
+      "retrieval_attempted": true,
+      "retrieval_status": "success",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "ret-004",
+        "category": "retrieval",
+        "input": "What is the vacation policy?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-policy.txt",
+          "key_fact": "vacation"
+        },
+        "difficulty": "easy"
+      },
+      "output": "Based on demo-policy.txt: Vacation policy: Employees accrue 1.5 vacation days per month of employment, up to 20 days per year. Vacation requests must be submitted 2 weeks in advance. Unused vacation days expire at year end.",
+      "route": "small_rag",
+      "status": "success",
+      "wall_ms": 409.3,
+      "steps": {
+        "document_retriever": 1.0,
+        "small_model": 408.2,
+        "verifier": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "retrieve",
+          "module": "document_retriever",
+          "status": "success",
+          "cpu_ms": 0.978,
+          "output_summary": "{'source_id': 'demo-policy.txt', 'location': 'local', 'text': 'Vacation policy: Employees accrue 1.5 vacation days per month of employment, up to 20 days per ye...",
+          "warnings": [],
+          "metadata": {
+            "raw_query": "What is the vacation policy?",
+            "normalized_query": "vacation policy",
+            "fts_query": "vacation OR policy",
+            "phrases_detected": [
+              "vacation policy"
+            ],
+            "top_k_candidates": [
+              {
+                "source_id": "demo-policy.txt",
+                "bm25_rank": -3.59,
+                "rerank_score": 2.86,
+                "text_excerpt": "Vacation policy: Employees accrue 1.5 vacation days per month of employment, up "
+              },
+              {
+                "source_id": "demo-policy.txt",
+                "bm25_rank": -0.0,
+                "rerank_score": 0.0,
+                "text_excerpt": "Company leave policy: Employees are required to provide 30 days written notice f"
+              },
+              {
+                "source_id": "demo-it-policy.txt",
+                "bm25_rank": -0.0,
+                "rerank_score": 0.0,
+                "text_excerpt": "Password policy: All passwords must be at least 12 characters long and include u"
+              }
+            ],
+            "selected_source_id": "demo-policy.txt",
+            "retrieval_status": "success",
+            "evidence_sufficient": true,
+            "retrieval_warnings": []
+          }
+        },
+        {
+          "step_id": "answer",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 408.204,
+          "output_summary": "Based on demo-policy.txt: Vacation policy: Employees accrue 1.5 vacation days per month of employment, up to 20 days per year. Vacation requests must be submitt...",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": null,
+              "model_path_basename": null,
+              "model_loaded": false,
+              "model_load_time_ms": null,
+              "fallback_used": true,
+              "fallback_reason": "no_model_configured",
+              "input_tokens": null,
+              "evidence_tokens": null,
+              "output_tokens": null,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": null,
+              "time_to_first_token_ms": null,
+              "stop_reason": "fallback",
+              "prompt_tokens_per_second": null,
+              "generation_tokens_per_second": null,
+              "process_rss_before_bytes": 24383488,
+              "process_rss_after_bytes": 24383488,
+              "process_rss_peak_bytes": 24383488,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": false,
+              "metrics_unavailable_reason": "model not loaded"
+            }
+          }
+        },
+        {
+          "step_id": "verify",
+          "module": "verifier",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "{'verified': True}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "Based on demo-policy.txt: Vacation policy: Employees accrue 1.5 vacation days per month of employment, up to 20 days per year. Vacation requests must be submitt...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 0,
+      "fallback_responses": 1,
+      "verification_attempted": true,
+      "verification_status": "success",
+      "retrieved_source_id": "demo-policy.txt",
+      "retrieval_attempted": true,
+      "retrieval_status": "success",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "ret-005",
+        "category": "retrieval",
+        "input": "What are the invoice submission requirements?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-invoice-spec.txt",
+          "key_fact": "invoice"
+        },
+        "difficulty": "easy"
+      },
+      "output": "Based on demo-invoice-spec.txt: Invoice requirements: All invoices must include vendor name, tax identification number, itemized list of services or products, applicable tax rate, subtotal, and total amount due. Invoices are payable within 30 days of receipt.",
+      "route": "small_rag",
+      "status": "success",
+      "wall_ms": 544.5,
+      "steps": {
+        "document_retriever": 1.1,
+        "small_model": 543.2,
+        "verifier": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "retrieve",
+          "module": "document_retriever",
+          "status": "success",
+          "cpu_ms": 1.072,
+          "output_summary": "{'source_id': 'demo-invoice-spec.txt', 'location': 'local', 'text': 'Invoice requirements: All invoices must include vendor name, tax identification number, ite...",
+          "warnings": [],
+          "metadata": {
+            "raw_query": "What are the invoice submission requirements?",
+            "normalized_query": "invoice submission requirements",
+            "fts_query": "invoice OR submission OR requirements",
+            "phrases_detected": [
+              "invoice",
+              "submission"
+            ],
+            "top_k_candidates": [
+              {
+                "source_id": "demo-invoice-spec.txt",
+                "bm25_rank": -3.59,
+                "rerank_score": 3.86,
+                "text_excerpt": "Invoice requirements: All invoices must include vendor name, tax identification "
+              },
+              {
+                "source_id": "demo-policy.txt",
+                "bm25_rank": -0.0,
+                "rerank_score": 0.0,
+                "text_excerpt": "Company leave policy: Employees are required to provide 30 days written notice f"
+              },
+              {
+                "source_id": "demo-policy.txt",
+                "bm25_rank": -0.0,
+                "rerank_score": 0.0,
+                "text_excerpt": "Expense reimbursement: Employees must submit expense reports within 30 days of i"
+              }
+            ],
+            "selected_source_id": "demo-invoice-spec.txt",
+            "retrieval_status": "success",
+            "evidence_sufficient": true,
+            "retrieval_warnings": []
+          }
+        },
+        {
+          "step_id": "answer",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 543.224,
+          "output_summary": "Based on demo-invoice-spec.txt: Invoice requirements: All invoices must include vendor name, tax identification number, itemized list of services or products, a...",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": null,
+              "model_path_basename": null,
+              "model_loaded": false,
+              "model_load_time_ms": null,
+              "fallback_used": true,
+              "fallback_reason": "no_model_configured",
+              "input_tokens": null,
+              "evidence_tokens": null,
+              "output_tokens": null,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": null,
+              "time_to_first_token_ms": null,
+              "stop_reason": "fallback",
+              "prompt_tokens_per_second": null,
+              "generation_tokens_per_second": null,
+              "process_rss_before_bytes": 24391680,
+              "process_rss_after_bytes": 24391680,
+              "process_rss_peak_bytes": 24391680,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": false,
+              "metrics_unavailable_reason": "model not loaded"
+            }
+          }
+        },
+        {
+          "step_id": "verify",
+          "module": "verifier",
+          "status": "success",
+          "cpu_ms": 0.01,
+          "output_summary": "{'verified': True}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "Based on demo-invoice-spec.txt: Invoice requirements: All invoices must include vendor name, tax identification number, itemized list of services or products, a...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 0,
+      "fallback_responses": 1,
+      "verification_attempted": true,
+      "verification_status": "success",
+      "retrieved_source_id": "demo-invoice-spec.txt",
+      "retrieval_attempted": true,
+      "retrieval_status": "success",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "ret-006",
+        "category": "retrieval",
+        "input": "How does the probation period work?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-hr-handbook.txt",
+          "key_fact": "probation"
+        },
+        "difficulty": "easy"
+      },
+      "output": "Based on demo-hr-handbook.txt: Probation period: New employees serve a 90-day probation period. Performance reviews occur at 30, 60, and 90 days. Successful completion of probation leads to permanent employment status and full benefits eligibility.",
+      "route": "small_rag",
+      "status": "success",
+      "wall_ms": 484.2,
+      "steps": {
+        "document_retriever": 1.6,
+        "small_model": 482.5,
+        "verifier": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "retrieve",
+          "module": "document_retriever",
+          "status": "success",
+          "cpu_ms": 1.577,
+          "output_summary": "{'source_id': 'demo-hr-handbook.txt', 'location': 'local', 'text': 'Probation period: New employees serve a 90-day probation period. Performance reviews occur a...",
+          "warnings": [],
+          "metadata": {
+            "raw_query": "How does the probation period work?",
+            "normalized_query": "probation period work",
+            "fts_query": "probation OR period OR work",
+            "phrases_detected": [
+              "probation period"
+            ],
+            "top_k_candidates": [
+              {
+                "source_id": "demo-hr-handbook.txt",
+                "bm25_rank": -5.47,
+                "rerank_score": 3.05,
+                "text_excerpt": "Probation period: New employees serve a 90-day probation period. Performance rev"
+              },
+              {
+                "source_id": "demo-contract-templates.txt",
+                "bm25_rank": -1.51,
+                "rerank_score": 0.65,
+                "text_excerpt": "Non-disclosure agreement: The receiving party agrees to maintain confidentiality"
+              },
+              {
+                "source_id": "demo-policy.txt",
+                "bm25_rank": -1.85,
+                "rerank_score": 0.19,
+                "text_excerpt": "Remote work policy: Employees may work remotely up to 3 days per week with manag"
+              }
+            ],
+            "selected_source_id": "demo-hr-handbook.txt",
+            "retrieval_status": "success",
+            "evidence_sufficient": true,
+            "retrieval_warnings": []
+          }
+        },
+        {
+          "step_id": "answer",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 482.5,
+          "output_summary": "Based on demo-hr-handbook.txt: Probation period: New employees serve a 90-day probation period. Performance reviews occur at 30, 60, and 90 days. Successful com...",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": null,
+              "model_path_basename": null,
+              "model_loaded": false,
+              "model_load_time_ms": null,
+              "fallback_used": true,
+              "fallback_reason": "no_model_configured",
+              "input_tokens": null,
+              "evidence_tokens": null,
+              "output_tokens": null,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": null,
+              "time_to_first_token_ms": null,
+              "stop_reason": "fallback",
+              "prompt_tokens_per_second": null,
+              "generation_tokens_per_second": null,
+              "process_rss_before_bytes": 24395776,
+              "process_rss_after_bytes": 24399872,
+              "process_rss_peak_bytes": 24399872,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": false,
+              "metrics_unavailable_reason": "model not loaded"
+            }
+          }
+        },
+        {
+          "step_id": "verify",
+          "module": "verifier",
+          "status": "success",
+          "cpu_ms": 0.005,
+          "output_summary": "{'verified': True}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "Based on demo-hr-handbook.txt: Probation period: New employees serve a 90-day probation period. Performance reviews occur at 30, 60, and 90 days. Successful com...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 0,
+      "fallback_responses": 1,
+      "verification_attempted": true,
+      "verification_status": "success",
+      "retrieved_source_id": "demo-hr-handbook.txt",
+      "retrieval_attempted": true,
+      "retrieval_status": "success",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "ret-007",
+        "category": "retrieval",
+        "input": "What notice is needed for resignation?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-policy.txt",
+          "key_fact": "30 days"
+        },
+        "difficulty": "easy"
+      },
+      "output": "Based on demo-policy.txt: Company leave policy: Employees are required to provide 30 days written notice for resignation. For bereavement leave, 5 days notice is required. Annual leave requires 14 days advance notice.",
+      "route": "small_rag",
+      "status": "success",
+      "wall_ms": 606.7,
+      "steps": {
+        "document_retriever": 1.2,
+        "small_model": 605.5,
+        "verifier": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "retrieve",
+          "module": "document_retriever",
+          "status": "success",
+          "cpu_ms": 1.16,
+          "output_summary": "{'source_id': 'demo-policy.txt', 'location': 'local', 'text': 'Company leave policy: Employees are required to provide 30 days written notice for resignation. F...",
+          "warnings": [],
+          "metadata": {
+            "raw_query": "What notice is needed for resignation?",
+            "normalized_query": "notice needed resignation",
+            "fts_query": "notice OR needed OR resignation",
+            "phrases_detected": [
+              "resignation"
+            ],
+            "top_k_candidates": [
+              {
+                "source_id": "demo-policy.txt",
+                "bm25_rank": -4.72,
+                "rerank_score": 2.97,
+                "text_excerpt": "Company leave policy: Employees are required to provide 30 days written notice f"
+              },
+              {
+                "source_id": "demo-contract-templates.txt",
+                "bm25_rank": -1.48,
+                "rerank_score": 0.15,
+                "text_excerpt": "Service agreement terms: Contracts are effective for 12 months from the date of "
+              }
+            ],
+            "selected_source_id": "demo-policy.txt",
+            "retrieval_status": "success",
+            "evidence_sufficient": true,
+            "retrieval_warnings": []
+          }
+        },
+        {
+          "step_id": "answer",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 605.462,
+          "output_summary": "Based on demo-policy.txt: Company leave policy: Employees are required to provide 30 days written notice for resignation. For bereavement leave, 5 days notice i...",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": null,
+              "model_path_basename": null,
+              "model_loaded": false,
+              "model_load_time_ms": null,
+              "fallback_used": true,
+              "fallback_reason": "no_model_configured",
+              "input_tokens": null,
+              "evidence_tokens": null,
+              "output_tokens": null,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": null,
+              "time_to_first_token_ms": null,
+              "stop_reason": "fallback",
+              "prompt_tokens_per_second": null,
+              "generation_tokens_per_second": null,
+              "process_rss_before_bytes": 24403968,
+              "process_rss_after_bytes": 24403968,
+              "process_rss_peak_bytes": 24403968,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": false,
+              "metrics_unavailable_reason": "model not loaded"
+            }
+          }
+        },
+        {
+          "step_id": "verify",
+          "module": "verifier",
+          "status": "success",
+          "cpu_ms": 0.005,
+          "output_summary": "{'verified': True}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "Based on demo-policy.txt: Company leave policy: Employees are required to provide 30 days written notice for resignation. For bereavement leave, 5 days notice i...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 0,
+      "fallback_responses": 1,
+      "verification_attempted": true,
+      "verification_status": "success",
+      "retrieved_source_id": "demo-policy.txt",
+      "retrieval_attempted": true,
+      "retrieval_status": "success",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "ret-008",
+        "category": "retrieval",
+        "input": "What documents are needed for onboarding?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-hr-handbook.txt",
+          "key_fact": "onboarding"
+        },
+        "difficulty": "easy"
+      },
+      "output": "Based on demo-hr-handbook.txt: Onboarding process: New employees must complete I-9 verification, sign the employee handbook acknowledgment, complete safety training, and set up their workstation within the first week. Required documents include government-issued photo ID, Social Security card, and proof of eligibility to work.",
+      "route": "small_rag",
+      "status": "success",
+      "wall_ms": 497.8,
+      "steps": {
+        "document_retriever": 1.6,
+        "small_model": 496.0,
+        "verifier": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "retrieve",
+          "module": "document_retriever",
+          "status": "success",
+          "cpu_ms": 1.619,
+          "output_summary": "{'source_id': 'demo-hr-handbook.txt', 'location': 'local', 'text': 'Onboarding process: New employees must complete I-9 verification, sign the employee handbook...",
+          "warnings": [],
+          "metadata": {
+            "raw_query": "What documents are needed for onboarding?",
+            "normalized_query": "documents needed onboarding",
+            "fts_query": "documents OR needed OR onboarding",
+            "phrases_detected": [
+              "onboarding"
+            ],
+            "top_k_candidates": [
+              {
+                "source_id": "demo-hr-handbook.txt",
+                "bm25_rank": -3.88,
+                "rerank_score": 2.89,
+                "text_excerpt": "Onboarding process: New employees must complete I-9 verification, sign the emplo"
+              }
+            ],
+            "selected_source_id": "demo-hr-handbook.txt",
+            "retrieval_status": "success",
+            "evidence_sufficient": true,
+            "retrieval_warnings": []
+          }
+        },
+        {
+          "step_id": "answer",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 496.027,
+          "output_summary": "Based on demo-hr-handbook.txt: Onboarding process: New employees must complete I-9 verification, sign the employee handbook acknowledgment, complete safety trai...",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": null,
+              "model_path_basename": null,
+              "model_loaded": false,
+              "model_load_time_ms": null,
+              "fallback_used": true,
+              "fallback_reason": "no_model_configured",
+              "input_tokens": null,
+              "evidence_tokens": null,
+              "output_tokens": null,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": null,
+              "time_to_first_token_ms": null,
+              "stop_reason": "fallback",
+              "prompt_tokens_per_second": null,
+              "generation_tokens_per_second": null,
+              "process_rss_before_bytes": 24403968,
+              "process_rss_after_bytes": 24403968,
+              "process_rss_peak_bytes": 24403968,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": false,
+              "metrics_unavailable_reason": "model not loaded"
+            }
+          }
+        },
+        {
+          "step_id": "verify",
+          "module": "verifier",
+          "status": "success",
+          "cpu_ms": 0.006,
+          "output_summary": "{'verified': True}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.001,
+          "output_summary": "Based on demo-hr-handbook.txt: Onboarding process: New employees must complete I-9 verification, sign the employee handbook acknowledgment, complete safety trai...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 0,
+      "fallback_responses": 1,
+      "verification_attempted": true,
+      "verification_status": "success",
+      "retrieved_source_id": "demo-hr-handbook.txt",
+      "retrieval_attempted": true,
+      "retrieval_status": "success",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "ext-001",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Acme, Tax 45, Total 245",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Acme\", \"tax\": 45.0, \"total\": 245.0}",
+        "expected_fields": {
+          "vendor": "Acme",
+          "tax": 45.0,
+          "total": 245.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"tax\": 45.0, \"total\": 245.0, \"vendor\": \"Acme\"}",
+      "route": "invoice_extraction",
+      "status": "success",
+      "wall_ms": 0.7,
+      "steps": {
+        "invoice_extractor": 0.6,
+        "verifier": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "extract",
+          "module": "invoice_extractor",
+          "status": "success",
+          "cpu_ms": 0.557,
+          "output_summary": "{'vendor': 'Acme', 'tax': 45.0, 'total': 245.0}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "verify",
+          "module": "verifier",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "{'verified': True}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.014,
+          "output_summary": "{\"tax\": 45.0, \"total\": 245.0, \"vendor\": \"Acme\"}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 0,
+      "real_llm_inferences": 0,
+      "fallback_responses": 0,
+      "verification_attempted": true,
+      "verification_status": "success",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "ext-002",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Beta Inc, Tax 12.50, Total 62.50",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Beta Inc\", \"tax\": 12.5, \"total\": 62.5}",
+        "expected_fields": {
+          "vendor": "Beta Inc",
+          "tax": 12.5,
+          "total": 62.5
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"tax\": 12.5, \"total\": 62.5, \"vendor\": \"Beta Inc\"}",
+      "route": "invoice_extraction",
+      "status": "success",
+      "wall_ms": 0.1,
+      "steps": {
+        "invoice_extractor": 0.0,
+        "verifier": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "extract",
+          "module": "invoice_extractor",
+          "status": "success",
+          "cpu_ms": 0.014,
+          "output_summary": "{'vendor': 'Beta Inc', 'tax': 12.5, 'total': 62.5}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "verify",
+          "module": "verifier",
+          "status": "success",
+          "cpu_ms": 0.001,
+          "output_summary": "{'verified': True}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.008,
+          "output_summary": "{\"tax\": 12.5, \"total\": 62.5, \"vendor\": \"Beta Inc\"}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 0,
+      "real_llm_inferences": 0,
+      "fallback_responses": 0,
+      "verification_attempted": true,
+      "verification_status": "success",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "ext-003",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Gamma Co, Tax 88, Total 488",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Gamma Co\", \"tax\": 88.0, \"total\": 488.0}",
+        "expected_fields": {
+          "vendor": "Gamma Co",
+          "tax": 88.0,
+          "total": 488.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"tax\": 88.0, \"total\": 488.0, \"vendor\": \"Gamma Co\"}",
+      "route": "invoice_extraction",
+      "status": "success",
+      "wall_ms": 0.0,
+      "steps": {
+        "invoice_extractor": 0.0,
+        "verifier": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "extract",
+          "module": "invoice_extractor",
+          "status": "success",
+          "cpu_ms": 0.009,
+          "output_summary": "{'vendor': 'Gamma Co', 'tax': 88.0, 'total': 488.0}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "verify",
+          "module": "verifier",
+          "status": "success",
+          "cpu_ms": 0.001,
+          "output_summary": "{'verified': True}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.006,
+          "output_summary": "{\"tax\": 88.0, \"total\": 488.0, \"vendor\": \"Gamma Co\"}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 0,
+      "real_llm_inferences": 0,
+      "fallback_responses": 0,
+      "verification_attempted": true,
+      "verification_status": "success",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "ext-004",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Delta LLC, Tax 33.00, Total 183.00",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Delta LLC\", \"tax\": 33.0, \"total\": 183.0}",
+        "expected_fields": {
+          "vendor": "Delta LLC",
+          "tax": 33.0,
+          "total": 183.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"tax\": 33.0, \"total\": 183.0, \"vendor\": \"Delta LLC\"}",
+      "route": "invoice_extraction",
+      "status": "success",
+      "wall_ms": 0.0,
+      "steps": {
+        "invoice_extractor": 0.0,
+        "verifier": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "extract",
+          "module": "invoice_extractor",
+          "status": "success",
+          "cpu_ms": 0.008,
+          "output_summary": "{'vendor': 'Delta LLC', 'tax': 33.0, 'total': 183.0}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "verify",
+          "module": "verifier",
+          "status": "success",
+          "cpu_ms": 0.001,
+          "output_summary": "{'verified': True}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.005,
+          "output_summary": "{\"tax\": 33.0, \"total\": 183.0, \"vendor\": \"Delta LLC\"}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 0,
+      "real_llm_inferences": 0,
+      "fallback_responses": 0,
+      "verification_attempted": true,
+      "verification_status": "success",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "ext-005",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Epsilon, Tax 5.25, Total 27.75",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Epsilon\", \"tax\": 5.25, \"total\": 27.75}",
+        "expected_fields": {
+          "vendor": "Epsilon",
+          "tax": 5.25,
+          "total": 27.75
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"tax\": 5.25, \"total\": 27.75, \"vendor\": \"Epsilon\"}",
+      "route": "invoice_extraction",
+      "status": "success",
+      "wall_ms": 0.0,
+      "steps": {
+        "invoice_extractor": 0.0,
+        "verifier": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "extract",
+          "module": "invoice_extractor",
+          "status": "success",
+          "cpu_ms": 0.008,
+          "output_summary": "{'vendor': 'Epsilon', 'tax': 5.25, 'total': 27.75}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "verify",
+          "module": "verifier",
+          "status": "success",
+          "cpu_ms": 0.001,
+          "output_summary": "{'verified': True}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.005,
+          "output_summary": "{\"tax\": 5.25, \"total\": 27.75, \"vendor\": \"Epsilon\"}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 0,
+      "real_llm_inferences": 0,
+      "fallback_responses": 0,
+      "verification_attempted": true,
+      "verification_status": "success",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "ext-006",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Zeta Corp, Tax 120, Total 720",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Zeta Corp\", \"tax\": 120.0, \"total\": 720.0}",
+        "expected_fields": {
+          "vendor": "Zeta Corp",
+          "tax": 120.0,
+          "total": 720.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"tax\": 120.0, \"total\": 720.0, \"vendor\": \"Zeta Corp\"}",
+      "route": "invoice_extraction",
+      "status": "success",
+      "wall_ms": 0.1,
+      "steps": {
+        "invoice_extractor": 0.0,
+        "verifier": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "extract",
+          "module": "invoice_extractor",
+          "status": "success",
+          "cpu_ms": 0.013,
+          "output_summary": "{'vendor': 'Zeta Corp', 'tax': 120.0, 'total': 720.0}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "verify",
+          "module": "verifier",
+          "status": "success",
+          "cpu_ms": 0.001,
+          "output_summary": "{'verified': True}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.009,
+          "output_summary": "{\"tax\": 120.0, \"total\": 720.0, \"vendor\": \"Zeta Corp\"}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 0,
+      "real_llm_inferences": 0,
+      "fallback_responses": 0,
+      "verification_attempted": true,
+      "verification_status": "success",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "ext-007",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Eta Inc, Tax 0, Total 50",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Eta Inc\", \"tax\": 0.0, \"total\": 50.0}",
+        "expected_fields": {
+          "vendor": "Eta Inc",
+          "tax": 0.0,
+          "total": 50.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"tax\": 0.0, \"total\": 50.0, \"vendor\": \"Eta Inc\"}",
+      "route": "invoice_extraction",
+      "status": "success",
+      "wall_ms": 0.1,
+      "steps": {
+        "invoice_extractor": 0.0,
+        "verifier": 0.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "extract",
+          "module": "invoice_extractor",
+          "status": "success",
+          "cpu_ms": 0.012,
+          "output_summary": "{'vendor': 'Eta Inc', 'tax': 0.0, 'total': 50.0}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "verify",
+          "module": "verifier",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "{'verified': True}",
+          "warnings": [],
+          "metadata": {}
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.009,
+          "output_summary": "{\"tax\": 0.0, \"total\": 50.0, \"vendor\": \"Eta Inc\"}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 0,
+      "real_llm_inferences": 0,
+      "fallback_responses": 0,
+      "verification_attempted": true,
+      "verification_status": "success",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "gen-001",
+        "category": "generation",
+        "input": "Rewrite to sound professional: The meeting went okay.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "Demo response for: Rewrite to sound professional: The meeting went okay.",
+      "route": "small_direct",
+      "status": "success",
+      "wall_ms": 665.6,
+      "steps": {
+        "small_model": 665.5,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 665.543,
+          "output_summary": "Demo response for: Rewrite to sound professional: The meeting went okay.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": null,
+              "model_path_basename": null,
+              "model_loaded": false,
+              "model_load_time_ms": null,
+              "fallback_used": true,
+              "fallback_reason": "no_model_configured",
+              "input_tokens": null,
+              "evidence_tokens": null,
+              "output_tokens": null,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": null,
+              "time_to_first_token_ms": null,
+              "stop_reason": "fallback",
+              "prompt_tokens_per_second": null,
+              "generation_tokens_per_second": null,
+              "process_rss_before_bytes": 24428544,
+              "process_rss_after_bytes": 24428544,
+              "process_rss_peak_bytes": 24428544,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": false,
+              "metrics_unavailable_reason": "model not loaded"
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "Demo response for: Rewrite to sound professional: The meeting went okay.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 0,
+      "fallback_responses": 1,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "gen-002",
+        "category": "generation",
+        "input": "Make formal: We need the report by Friday.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "Demo response for: Make formal: We need the report by Friday.",
+      "route": "small_direct",
+      "status": "success",
+      "wall_ms": 497.6,
+      "steps": {
+        "small_model": 497.4,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 497.444,
+          "output_summary": "Demo response for: Make formal: We need the report by Friday.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": null,
+              "model_path_basename": null,
+              "model_loaded": false,
+              "model_load_time_ms": null,
+              "fallback_used": true,
+              "fallback_reason": "no_model_configured",
+              "input_tokens": null,
+              "evidence_tokens": null,
+              "output_tokens": null,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": null,
+              "time_to_first_token_ms": null,
+              "stop_reason": "fallback",
+              "prompt_tokens_per_second": null,
+              "generation_tokens_per_second": null,
+              "process_rss_before_bytes": 24432640,
+              "process_rss_after_bytes": 24432640,
+              "process_rss_peak_bytes": 24432640,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": false,
+              "metrics_unavailable_reason": "model not loaded"
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.005,
+          "output_summary": "Demo response for: Make formal: We need the report by Friday.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 0,
+      "fallback_responses": 1,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "gen-003",
+        "category": "generation",
+        "input": "Improve clarity: The project has some issues.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "Demo response for: Improve clarity: The project has some issues.",
+      "route": "small_direct",
+      "status": "success",
+      "wall_ms": 639.2,
+      "steps": {
+        "small_model": 639.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 639.047,
+          "output_summary": "Demo response for: Improve clarity: The project has some issues.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": null,
+              "model_path_basename": null,
+              "model_loaded": false,
+              "model_load_time_ms": null,
+              "fallback_used": true,
+              "fallback_reason": "no_model_configured",
+              "input_tokens": null,
+              "evidence_tokens": null,
+              "output_tokens": null,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": null,
+              "time_to_first_token_ms": null,
+              "stop_reason": "fallback",
+              "prompt_tokens_per_second": null,
+              "generation_tokens_per_second": null,
+              "process_rss_before_bytes": 24432640,
+              "process_rss_after_bytes": 24432640,
+              "process_rss_peak_bytes": 24432640,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": false,
+              "metrics_unavailable_reason": "model not loaded"
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "Demo response for: Improve clarity: The project has some issues.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 0,
+      "fallback_responses": 1,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "gen-004",
+        "category": "generation",
+        "input": "Rewrite professionally: Thanks for your help.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "Demo response for: Rewrite professionally: Thanks for your help.",
+      "route": "small_direct",
+      "status": "success",
+      "wall_ms": 737.0,
+      "steps": {
+        "small_model": 736.8,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 736.818,
+          "output_summary": "Demo response for: Rewrite professionally: Thanks for your help.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": null,
+              "model_path_basename": null,
+              "model_loaded": false,
+              "model_load_time_ms": null,
+              "fallback_used": true,
+              "fallback_reason": "no_model_configured",
+              "input_tokens": null,
+              "evidence_tokens": null,
+              "output_tokens": null,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": null,
+              "time_to_first_token_ms": null,
+              "stop_reason": "fallback",
+              "prompt_tokens_per_second": null,
+              "generation_tokens_per_second": null,
+              "process_rss_before_bytes": 24436736,
+              "process_rss_after_bytes": 24436736,
+              "process_rss_peak_bytes": 24436736,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": false,
+              "metrics_unavailable_reason": "model not loaded"
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.006,
+          "output_summary": "Demo response for: Rewrite professionally: Thanks for your help.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 0,
+      "fallback_responses": 1,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "gen-005",
+        "category": "generation",
+        "input": "Make formal: Can you send me the file?",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "Demo response for: Make formal: Can you send me the file?",
+      "route": "small_direct",
+      "status": "success",
+      "wall_ms": 673.2,
+      "steps": {
+        "small_model": 673.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 673.002,
+          "output_summary": "Demo response for: Make formal: Can you send me the file?",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": null,
+              "model_path_basename": null,
+              "model_loaded": false,
+              "model_load_time_ms": null,
+              "fallback_used": true,
+              "fallback_reason": "no_model_configured",
+              "input_tokens": null,
+              "evidence_tokens": null,
+              "output_tokens": null,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": null,
+              "time_to_first_token_ms": null,
+              "stop_reason": "fallback",
+              "prompt_tokens_per_second": null,
+              "generation_tokens_per_second": null,
+              "process_rss_before_bytes": 24440832,
+              "process_rss_after_bytes": 24440832,
+              "process_rss_peak_bytes": 24440832,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": false,
+              "metrics_unavailable_reason": "model not loaded"
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.007,
+          "output_summary": "Demo response for: Make formal: Can you send me the file?",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 0,
+      "fallback_responses": 1,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "gen-006",
+        "category": "generation",
+        "input": "Improve tone: This isn't good enough.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "Demo response for: Improve tone: This isn't good enough.",
+      "route": "small_direct",
+      "status": "success",
+      "wall_ms": 617.0,
+      "steps": {
+        "small_model": 616.8,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 616.781,
+          "output_summary": "Demo response for: Improve tone: This isn't good enough.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": null,
+              "model_path_basename": null,
+              "model_loaded": false,
+              "model_load_time_ms": null,
+              "fallback_used": true,
+              "fallback_reason": "no_model_configured",
+              "input_tokens": null,
+              "evidence_tokens": null,
+              "output_tokens": null,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": null,
+              "time_to_first_token_ms": null,
+              "stop_reason": "fallback",
+              "prompt_tokens_per_second": null,
+              "generation_tokens_per_second": null,
+              "process_rss_before_bytes": 24444928,
+              "process_rss_after_bytes": 24444928,
+              "process_rss_peak_bytes": 24444928,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": false,
+              "metrics_unavailable_reason": "model not loaded"
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "Demo response for: Improve tone: This isn't good enough.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 0,
+      "fallback_responses": 1,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    },
+    {
+      "case": {
+        "id": "gen-007",
+        "category": "generation",
+        "input": "Rewrite professionally: Let me know when you're free.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "Demo response for: Rewrite professionally: Let me know when you're free.",
+      "route": "small_direct",
+      "status": "success",
+      "wall_ms": 536.1,
+      "steps": {
+        "small_model": 536.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 535.99,
+          "output_summary": "Demo response for: Rewrite professionally: Let me know when you're free.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": null,
+              "model_path_basename": null,
+              "model_loaded": false,
+              "model_load_time_ms": null,
+              "fallback_used": true,
+              "fallback_reason": "no_model_configured",
+              "input_tokens": null,
+              "evidence_tokens": null,
+              "output_tokens": null,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": null,
+              "time_to_first_token_ms": null,
+              "stop_reason": "fallback",
+              "prompt_tokens_per_second": null,
+              "generation_tokens_per_second": null,
+              "process_rss_before_bytes": 24449024,
+              "process_rss_after_bytes": 24449024,
+              "process_rss_peak_bytes": 24449024,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": false,
+              "metrics_unavailable_reason": "model not loaded"
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "Demo response for: Rewrite professionally: Let me know when you're free.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 0,
+      "fallback_responses": 1,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {}
+    }
+  ],
+  "model_invoke_count": 0,
+  "total_wall_ms": 8439.8,
+  "avg_wall_ms": 281.3,
+  "case_count": 30
+}
