@@ -1,0 +1,2498 @@
+{
+  "mode": "forced",
+  "results": [
+    {
+      "case": {
+        "id": "calc-001",
+        "category": "calculation",
+        "input": "Operating margin if revenue 850000 expenses 612000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "28.00%",
+        "expected_fields": {
+          "margin_pct": 28.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "28.0%",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1266.6,
+      "steps": {
+        "small_model": 1266.5,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1266.453,
+          "output_summary": "28.0%",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 52,
+              "evidence_tokens": 0,
+              "output_tokens": 5,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 711.5,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 73.08,
+              "generation_tokens_per_second": 7.03,
+              "process_rss_before_bytes": 1730392064,
+              "process_rss_after_bytes": 1733947392,
+              "process_rss_peak_bytes": 1733947392,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.005,
+          "output_summary": "28.0%",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 52,
+        "evidence_tokens": 0,
+        "output_tokens": 5,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-002",
+        "category": "calculation",
+        "input": "Profit margin if revenue 500000 costs 375000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "25.00%",
+        "expected_fields": {
+          "margin_pct": 25.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "30",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 925.5,
+      "steps": {
+        "small_model": 925.5,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 925.451,
+          "output_summary": "30",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 52,
+              "evidence_tokens": 0,
+              "output_tokens": 2,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 368.2,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 141.22,
+              "generation_tokens_per_second": 5.43,
+              "process_rss_before_bytes": 1733955584,
+              "process_rss_after_bytes": 1735798784,
+              "process_rss_peak_bytes": 1735798784,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "30",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 52,
+        "evidence_tokens": 0,
+        "output_tokens": 2,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-003",
+        "category": "calculation",
+        "input": "Margin percentage if sales 1200000 expenses 960000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "20.00%",
+        "expected_fields": {
+          "margin_pct": 20.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "20",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 931.4,
+      "steps": {
+        "small_model": 931.4,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 931.371,
+          "output_summary": "20",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 53,
+              "evidence_tokens": 0,
+              "output_tokens": 2,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 376.7,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 140.68,
+              "generation_tokens_per_second": 5.31,
+              "process_rss_before_bytes": 1735802880,
+              "process_rss_after_bytes": 1737650176,
+              "process_rss_peak_bytes": 1737650176,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "20",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 53,
+        "evidence_tokens": 0,
+        "output_tokens": 2,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-004",
+        "category": "calculation",
+        "input": "Operating margin if revenue 2000000 expenses 1400000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "30.00%",
+        "expected_fields": {
+          "margin_pct": 30.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "30",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 944.3,
+      "steps": {
+        "small_model": 944.3,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 944.287,
+          "output_summary": "30",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 54,
+              "evidence_tokens": 0,
+              "output_tokens": 2,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 385.3,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 140.17,
+              "generation_tokens_per_second": 5.19,
+              "process_rss_before_bytes": 1737650176,
+              "process_rss_after_bytes": 1739472896,
+              "process_rss_peak_bytes": 1739472896,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "30",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 54,
+        "evidence_tokens": 0,
+        "output_tokens": 2,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-005",
+        "category": "calculation",
+        "input": "Profit margin if revenue 750000 costs 600000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "20.00%",
+        "expected_fields": {
+          "margin_pct": 20.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "10",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 2029.1,
+      "steps": {
+        "small_model": 2029.1,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 2029.061,
+          "output_summary": "10",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 52,
+              "evidence_tokens": 0,
+              "output_tokens": 2,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 1518.2,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 34.25,
+              "generation_tokens_per_second": 1.32,
+              "process_rss_before_bytes": 1739472896,
+              "process_rss_after_bytes": 1741307904,
+              "process_rss_peak_bytes": 1741307904,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "10",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 52,
+        "evidence_tokens": 0,
+        "output_tokens": 2,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-006",
+        "category": "calculation",
+        "input": "Margin if revenue 100000 expenses 85000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "15.00%",
+        "expected_fields": {
+          "margin_pct": 15.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "5000",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 917.5,
+      "steps": {
+        "small_model": 917.4,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 917.411,
+          "output_summary": "5000",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 50,
+              "evidence_tokens": 0,
+              "output_tokens": 4,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 404.9,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 123.48,
+              "generation_tokens_per_second": 9.88,
+              "process_rss_before_bytes": 1741307904,
+              "process_rss_after_bytes": 1743147008,
+              "process_rss_peak_bytes": 1743147008,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "5000",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 50,
+        "evidence_tokens": 0,
+        "output_tokens": 4,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-007",
+        "category": "calculation",
+        "input": "Operating margin if revenue 300000 expenses 210000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "30.00%",
+        "expected_fields": {
+          "margin_pct": 30.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "30",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 882.8,
+      "steps": {
+        "small_model": 882.7,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 882.71,
+          "output_summary": "30",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 52,
+              "evidence_tokens": 0,
+              "output_tokens": 2,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 386.0,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 134.72,
+              "generation_tokens_per_second": 5.18,
+              "process_rss_before_bytes": 1743147008,
+              "process_rss_after_bytes": 1745022976,
+              "process_rss_peak_bytes": 1745022976,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "30",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 52,
+        "evidence_tokens": 0,
+        "output_tokens": 2,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "calc-008",
+        "category": "calculation",
+        "input": "Profit margin if revenue 450000 costs 360000?",
+        "expected_route": "deterministic_calculation",
+        "expected_output": "20.00%",
+        "expected_fields": {
+          "margin_pct": 20.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "30",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 944.5,
+      "steps": {
+        "small_model": 944.4,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 944.412,
+          "output_summary": "30",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 52,
+              "evidence_tokens": 0,
+              "output_tokens": 2,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 384.4,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 135.26,
+              "generation_tokens_per_second": 5.2,
+              "process_rss_before_bytes": 1745022976,
+              "process_rss_after_bytes": 1746944000,
+              "process_rss_peak_bytes": 1746944000,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "30",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 52,
+        "evidence_tokens": 0,
+        "output_tokens": 2,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-001",
+        "category": "retrieval",
+        "input": "According to the policy, how many days notice are required?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-policy.txt",
+          "key_fact": "30 days"
+        },
+        "difficulty": "easy"
+      },
+      "output": "The policy requires 30 days' notice.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1498.4,
+      "steps": {
+        "small_model": 1498.4,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1498.358,
+          "output_summary": "The policy requires 30 days' notice.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 37,
+              "evidence_tokens": 0,
+              "output_tokens": 10,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 948.3,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 39.02,
+              "generation_tokens_per_second": 10.54,
+              "process_rss_before_bytes": 1746944000,
+              "process_rss_after_bytes": 1748860928,
+              "process_rss_peak_bytes": 1748860928,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "The policy requires 30 days' notice.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 37,
+        "evidence_tokens": 0,
+        "output_tokens": 10,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-002",
+        "category": "retrieval",
+        "input": "What does the contract say about termination?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-contract-templates.txt",
+          "key_fact": "termination"
+        },
+        "difficulty": "easy"
+      },
+      "output": "The contract typically specifies the conditions and procedures for termination, including notice periods and payment terms.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1969.6,
+      "steps": {
+        "small_model": 1969.5,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1969.539,
+          "output_summary": "The contract typically specifies the conditions and procedures for termination, including notice periods and payment terms.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 33,
+              "evidence_tokens": 0,
+              "output_tokens": 18,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 1367.9,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 24.12,
+              "generation_tokens_per_second": 13.16,
+              "process_rss_before_bytes": 1748860928,
+              "process_rss_after_bytes": 1750798336,
+              "process_rss_peak_bytes": 1750798336,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "The contract typically specifies the conditions and procedures for termination, including notice periods and payment terms.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 33,
+        "evidence_tokens": 0,
+        "output_tokens": 18,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-003",
+        "category": "retrieval",
+        "input": "How many sick days does the handbook allow?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-hr-handbook.txt",
+          "key_fact": "10 sick days"
+        },
+        "difficulty": "easy"
+      },
+      "output": "The handbook allows 10 sick days per year.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1384.9,
+      "steps": {
+        "small_model": 1384.8,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1384.804,
+          "output_summary": "The handbook allows 10 sick days per year.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 34,
+              "evidence_tokens": 0,
+              "output_tokens": 11,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 827.3,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 41.1,
+              "generation_tokens_per_second": 13.3,
+              "process_rss_before_bytes": 1750802432,
+              "process_rss_after_bytes": 1752662016,
+              "process_rss_peak_bytes": 1752662016,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "The handbook allows 10 sick days per year.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 34,
+        "evidence_tokens": 0,
+        "output_tokens": 11,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-004",
+        "category": "retrieval",
+        "input": "What is the vacation policy?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-policy.txt",
+          "key_fact": "vacation"
+        },
+        "difficulty": "easy"
+      },
+      "output": "The vacation policy is the set of rules and guidelines that govern the use of vacation time by employees. It outlines the procedures for taking leave, the length of leave, and the responsibilities of the employee during their absence.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 3251.4,
+      "steps": {
+        "small_model": 3251.3,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 3251.335,
+          "output_summary": "The vacation policy is the set of rules and guidelines that govern the use of vacation time by employees. It outlines the procedures for taking leave, the lengt...",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 31,
+              "evidence_tokens": 0,
+              "output_tokens": 43,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 2692.5,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 11.51,
+              "generation_tokens_per_second": 15.97,
+              "process_rss_before_bytes": 1752666112,
+              "process_rss_after_bytes": 1754722304,
+              "process_rss_peak_bytes": 1754722304,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "The vacation policy is the set of rules and guidelines that govern the use of vacation time by employees. It outlines the procedures for taking leave, the lengt...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 31,
+        "evidence_tokens": 0,
+        "output_tokens": 43,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-005",
+        "category": "retrieval",
+        "input": "What are the invoice submission requirements?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-invoice-spec.txt",
+          "key_fact": "invoice"
+        },
+        "difficulty": "easy"
+      },
+      "output": "Invoice submission requirements vary by country and industry. Generally, they include providing accurate and complete information about the goods or services sold, including the invoice number, date, amount, and payment terms. Some may require a signed copy, while others may allow electronic submissions. It's important to check with your specific supplier or industry association for detailed guidelines.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 4952.4,
+      "steps": {
+        "small_model": 4952.3,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 4952.313,
+          "output_summary": "Invoice submission requirements vary by country and industry. Generally, they include providing accurate and complete information about the goods or services so...",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 32,
+              "evidence_tokens": 0,
+              "output_tokens": 68,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 4360.5,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 7.34,
+              "generation_tokens_per_second": 15.59,
+              "process_rss_before_bytes": 1754722304,
+              "process_rss_after_bytes": 1756712960,
+              "process_rss_peak_bytes": 1756712960,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "Invoice submission requirements vary by country and industry. Generally, they include providing accurate and complete information about the goods or services so...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 32,
+        "evidence_tokens": 0,
+        "output_tokens": 68,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-006",
+        "category": "retrieval",
+        "input": "How does the probation period work?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-hr-handbook.txt",
+          "key_fact": "probation"
+        },
+        "difficulty": "easy"
+      },
+      "output": "The probation period is a period of time during which a probationer is supervised by a probation officer.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1888.1,
+      "steps": {
+        "small_model": 1888.1,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1888.069,
+          "output_summary": "The probation period is a period of time during which a probationer is supervised by a probation officer.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 32,
+              "evidence_tokens": 0,
+              "output_tokens": 20,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 1339.1,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 23.9,
+              "generation_tokens_per_second": 14.94,
+              "process_rss_before_bytes": 1756712960,
+              "process_rss_after_bytes": 1758576640,
+              "process_rss_peak_bytes": 1758576640,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "The probation period is a period of time during which a probationer is supervised by a probation officer.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 32,
+        "evidence_tokens": 0,
+        "output_tokens": 20,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-007",
+        "category": "retrieval",
+        "input": "What notice is needed for resignation?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-policy.txt",
+          "key_fact": "30 days"
+        },
+        "difficulty": "easy"
+      },
+      "output": "A resignation letter is typically accompanied by a resignation notice.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1406.7,
+      "steps": {
+        "small_model": 1406.7,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1406.67,
+          "output_summary": "A resignation letter is typically accompanied by a resignation notice.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 32,
+              "evidence_tokens": 0,
+              "output_tokens": 11,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 803.2,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 39.84,
+              "generation_tokens_per_second": 13.69,
+              "process_rss_before_bytes": 1758576640,
+              "process_rss_after_bytes": 1760428032,
+              "process_rss_peak_bytes": 1760428032,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "A resignation letter is typically accompanied by a resignation notice.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 32,
+        "evidence_tokens": 0,
+        "output_tokens": 11,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "ret-008",
+        "category": "retrieval",
+        "input": "What documents are needed for onboarding?",
+        "expected_route": "small_rag",
+        "expected_output": "",
+        "expected_fields": {
+          "source_id": "demo-hr-handbook.txt",
+          "key_fact": "onboarding"
+        },
+        "difficulty": "easy"
+      },
+      "output": "The documents needed for onboarding can vary depending on the organization and the specific role. However, common documents that are typically required include:\n\n1. Resume or CV\n2. Cover letter\n3. Educational background (degrees, transcripts)\n4. Work experience (job titles, dates, and descriptions)\n5. References (names, contact information, and relationship)\n6. Proof of identity (driver's license, passport, or birth certificate)\n7. Proof of employment (pay stubs, tax returns, or employment contract)\n8. Professional certifications or licenses\n9. Any other relevant documents specific to the role\n\nIt's important to check with the specific organization for any additional requirements.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 9537.5,
+      "steps": {
+        "small_model": 9537.4,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 9537.435,
+          "output_summary": "The documents needed for onboarding can vary depending on the organization and the specific role. However, common documents that are typically required include:...",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 33,
+              "evidence_tokens": 0,
+              "output_tokens": 137,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 9021.1,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 3.66,
+              "generation_tokens_per_second": 15.19,
+              "process_rss_before_bytes": 1760428032,
+              "process_rss_after_bytes": 1762508800,
+              "process_rss_peak_bytes": 1762508800,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "The documents needed for onboarding can vary depending on the organization and the specific role. However, common documents that are typically required include:...",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 33,
+        "evidence_tokens": 0,
+        "output_tokens": 137,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-001",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Acme, Tax 45, Total 245",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Acme\", \"tax\": 45.0, \"total\": 245.0}",
+        "expected_fields": {
+          "vendor": "Acme",
+          "tax": 45.0,
+          "total": 245.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Acme\", \"tax\": 45, \"total\": 245}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 4614.7,
+      "steps": {
+        "small_model": 4614.6,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 4614.648,
+          "output_summary": "{\"vendor\": \"Acme\", \"tax\": 45, \"total\": 245}",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 67,
+              "evidence_tokens": 0,
+              "output_tokens": 22,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 4146.9,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 16.16,
+              "generation_tokens_per_second": 5.31,
+              "process_rss_before_bytes": 1762504704,
+              "process_rss_after_bytes": 1767444480,
+              "process_rss_peak_bytes": 1767444480,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "{\"vendor\": \"Acme\", \"tax\": 45, \"total\": 245}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 67,
+        "evidence_tokens": 0,
+        "output_tokens": 22,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-002",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Beta Inc, Tax 12.50, Total 62.50",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Beta Inc\", \"tax\": 12.5, \"total\": 62.5}",
+        "expected_fields": {
+          "vendor": "Beta Inc",
+          "tax": 12.5,
+          "total": 62.5
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Beta Inc\", \"tax\": 12.5, \"total\": 62.5}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 2062.0,
+      "steps": {
+        "small_model": 2062.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 2061.986,
+          "output_summary": "{\"vendor\": \"Beta Inc\", \"tax\": 12.5, \"total\": 62.5}",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 72,
+              "evidence_tokens": 0,
+              "output_tokens": 25,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 1576.4,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 45.67,
+              "generation_tokens_per_second": 15.86,
+              "process_rss_before_bytes": 1767444480,
+              "process_rss_after_bytes": 1769287680,
+              "process_rss_peak_bytes": 1769287680,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "{\"vendor\": \"Beta Inc\", \"tax\": 12.5, \"total\": 62.5}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 72,
+        "evidence_tokens": 0,
+        "output_tokens": 25,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-003",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Gamma Co, Tax 88, Total 488",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Gamma Co\", \"tax\": 88.0, \"total\": 488.0}",
+        "expected_fields": {
+          "vendor": "Gamma Co",
+          "tax": 88.0,
+          "total": 488.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Gamma Co\", \"tax\": \"88\", \"total\": \"488\"}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 2110.0,
+      "steps": {
+        "small_model": 2109.9,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 2109.908,
+          "output_summary": "{\"vendor\": \"Gamma Co\", \"tax\": \"88\", \"total\": \"488\"}",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 67,
+              "evidence_tokens": 0,
+              "output_tokens": 22,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 1597.4,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 41.94,
+              "generation_tokens_per_second": 13.77,
+              "process_rss_before_bytes": 1769287680,
+              "process_rss_after_bytes": 1771171840,
+              "process_rss_peak_bytes": 1771171840,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "{\"vendor\": \"Gamma Co\", \"tax\": \"88\", \"total\": \"488\"}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 67,
+        "evidence_tokens": 0,
+        "output_tokens": 22,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-004",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Delta LLC, Tax 33.00, Total 183.00",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Delta LLC\", \"tax\": 33.0, \"total\": 183.0}",
+        "expected_fields": {
+          "vendor": "Delta LLC",
+          "tax": 33.0,
+          "total": 183.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Delta LLC\", \"tax\": 33.00, \"total\": 183.00}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 2903.5,
+      "steps": {
+        "small_model": 2903.5,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 2903.49,
+          "output_summary": "{\"vendor\": \"Delta LLC\", \"tax\": 33.00, \"total\": 183.00}",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 73,
+              "evidence_tokens": 0,
+              "output_tokens": 28,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 2412.8,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 30.26,
+              "generation_tokens_per_second": 11.6,
+              "process_rss_before_bytes": 1771171840,
+              "process_rss_after_bytes": 1773015040,
+              "process_rss_peak_bytes": 1773015040,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "{\"vendor\": \"Delta LLC\", \"tax\": 33.00, \"total\": 183.00}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 73,
+        "evidence_tokens": 0,
+        "output_tokens": 28,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-005",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Epsilon, Tax 5.25, Total 27.75",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Epsilon\", \"tax\": 5.25, \"total\": 27.75}",
+        "expected_fields": {
+          "vendor": "Epsilon",
+          "tax": 5.25,
+          "total": 27.75
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Epsilon\", \"tax\": 5.25, \"total\": 27.75}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 2568.4,
+      "steps": {
+        "small_model": 2568.4,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 2568.376,
+          "output_summary": "{\"vendor\": \"Epsilon\", \"tax\": 5.25, \"total\": 27.75}",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 71,
+              "evidence_tokens": 0,
+              "output_tokens": 26,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 2065.3,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 34.38,
+              "generation_tokens_per_second": 12.59,
+              "process_rss_before_bytes": 1773015040,
+              "process_rss_after_bytes": 1774850048,
+              "process_rss_peak_bytes": 1774850048,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "{\"vendor\": \"Epsilon\", \"tax\": 5.25, \"total\": 27.75}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 71,
+        "evidence_tokens": 0,
+        "output_tokens": 26,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-006",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Zeta Corp, Tax 120, Total 720",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Zeta Corp\", \"tax\": 120.0, \"total\": 720.0}",
+        "expected_fields": {
+          "vendor": "Zeta Corp",
+          "tax": 120.0,
+          "total": 720.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Zeta Corp\", \"tax\": 120, \"total\": 720}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 2346.9,
+      "steps": {
+        "small_model": 2346.8,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 2346.844,
+          "output_summary": "{\"vendor\": \"Zeta Corp\", \"tax\": 120, \"total\": 720}",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 69,
+              "evidence_tokens": 0,
+              "output_tokens": 24,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 1850.7,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 37.28,
+              "generation_tokens_per_second": 12.97,
+              "process_rss_before_bytes": 1774850048,
+              "process_rss_after_bytes": 1776709632,
+              "process_rss_peak_bytes": 1776709632,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.004,
+          "output_summary": "{\"vendor\": \"Zeta Corp\", \"tax\": 120, \"total\": 720}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 69,
+        "evidence_tokens": 0,
+        "output_tokens": 24,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "ext-007",
+        "category": "extraction",
+        "input": "Extract invoice: Vendor Eta Inc, Tax 0, Total 50",
+        "expected_route": "invoice_extraction",
+        "expected_output": "{\"vendor\": \"Eta Inc\", \"tax\": 0.0, \"total\": 50.0}",
+        "expected_fields": {
+          "vendor": "Eta Inc",
+          "tax": 0.0,
+          "total": 50.0
+        },
+        "difficulty": "easy"
+      },
+      "output": "{\"vendor\": \"Eta Inc\", \"tax\": 0, \"total\": 50}",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1884.1,
+      "steps": {
+        "small_model": 1884.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1884.019,
+          "output_summary": "{\"vendor\": \"Eta Inc\", \"tax\": 0, \"total\": 50}",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 66,
+              "evidence_tokens": 0,
+              "output_tokens": 20,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 1343.1,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 49.14,
+              "generation_tokens_per_second": 14.89,
+              "process_rss_before_bytes": 1776713728,
+              "process_rss_after_bytes": 1778561024,
+              "process_rss_peak_bytes": 1778561024,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "{\"vendor\": \"Eta Inc\", \"tax\": 0, \"total\": 50}",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 66,
+        "evidence_tokens": 0,
+        "output_tokens": 20,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-001",
+        "category": "generation",
+        "input": "Rewrite to sound professional: The meeting went okay.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "The meeting proceeded as expected.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1445.8,
+      "steps": {
+        "small_model": 1445.7,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1445.744,
+          "output_summary": "The meeting proceeded as expected.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 46,
+              "evidence_tokens": 0,
+              "output_tokens": 6,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 958.4,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 48.0,
+              "generation_tokens_per_second": 6.26,
+              "process_rss_before_bytes": 1778561024,
+              "process_rss_after_bytes": 1780436992,
+              "process_rss_peak_bytes": 1780436992,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "The meeting proceeded as expected.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 46,
+        "evidence_tokens": 0,
+        "output_tokens": 6,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-002",
+        "category": "generation",
+        "input": "Make formal: We need the report by Friday.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "We require the report to be submitted by Friday.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1334.6,
+      "steps": {
+        "small_model": 1334.6,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1334.565,
+          "output_summary": "We require the report to be submitted by Friday.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 45,
+              "evidence_tokens": 0,
+              "output_tokens": 10,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 834.9,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 53.9,
+              "generation_tokens_per_second": 11.98,
+              "process_rss_before_bytes": 1780436992,
+              "process_rss_after_bytes": 1738448896,
+              "process_rss_peak_bytes": 1738448896,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "We require the report to be submitted by Friday.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 45,
+        "evidence_tokens": 0,
+        "output_tokens": 10,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-003",
+        "category": "generation",
+        "input": "Improve clarity: The project has some issues.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "The project exhibits certain challenges.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1197.9,
+      "steps": {
+        "small_model": 1197.8,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1197.834,
+          "output_summary": "The project exhibits certain challenges.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 45,
+              "evidence_tokens": 0,
+              "output_tokens": 6,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 706.4,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 63.7,
+              "generation_tokens_per_second": 8.49,
+              "process_rss_before_bytes": 1738448896,
+              "process_rss_after_bytes": 1740259328,
+              "process_rss_peak_bytes": 1740259328,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "The project exhibits certain challenges.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 45,
+        "evidence_tokens": 0,
+        "output_tokens": 6,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-004",
+        "category": "generation",
+        "input": "Rewrite professionally: Thanks for your help.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "Thank you for your assistance.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 983.8,
+      "steps": {
+        "small_model": 983.7,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 983.709,
+          "output_summary": "Thank you for your assistance.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 44,
+              "evidence_tokens": 0,
+              "output_tokens": 6,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 478.6,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 91.93,
+              "generation_tokens_per_second": 12.54,
+              "process_rss_before_bytes": 1740255232,
+              "process_rss_after_bytes": 1742114816,
+              "process_rss_peak_bytes": 1742114816,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "Thank you for your assistance.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 44,
+        "evidence_tokens": 0,
+        "output_tokens": 6,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-005",
+        "category": "generation",
+        "input": "Make formal: Can you send me the file?",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "Could you please send me the file?",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1270.8,
+      "steps": {
+        "small_model": 1270.7,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1270.701,
+          "output_summary": "Could you please send me the file?",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 45,
+              "evidence_tokens": 0,
+              "output_tokens": 8,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 776.3,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 57.96,
+              "generation_tokens_per_second": 10.3,
+              "process_rss_before_bytes": 1742110720,
+              "process_rss_after_bytes": 1743978496,
+              "process_rss_peak_bytes": 1743978496,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "Could you please send me the file?",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 45,
+        "evidence_tokens": 0,
+        "output_tokens": 8,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-006",
+        "category": "generation",
+        "input": "Improve tone: This isn't good enough.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "This level of performance is insufficient.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1045.1,
+      "steps": {
+        "small_model": 1045.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1045.002,
+          "output_summary": "This level of performance is insufficient.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 45,
+              "evidence_tokens": 0,
+              "output_tokens": 7,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 541.1,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 83.16,
+              "generation_tokens_per_second": 12.94,
+              "process_rss_before_bytes": 1743978496,
+              "process_rss_after_bytes": 1745858560,
+              "process_rss_peak_bytes": 1745858560,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.003,
+          "output_summary": "This level of performance is insufficient.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 45,
+        "evidence_tokens": 0,
+        "output_tokens": 7,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    },
+    {
+      "case": {
+        "id": "gen-007",
+        "category": "generation",
+        "input": "Rewrite professionally: Let me know when you're free.",
+        "expected_route": "small_direct",
+        "expected_output": "",
+        "expected_fields": {
+          "non_empty": true,
+          "min_length": 20
+        },
+        "difficulty": "easy"
+      },
+      "output": "Please let me know your availability.",
+      "route": "forced_single_model",
+      "status": "success",
+      "wall_ms": 1067.0,
+      "steps": {
+        "small_model": 1067.0,
+        "response_renderer": 0.0
+      },
+      "traces": [
+        {
+          "step_id": "generate",
+          "module": "small_model",
+          "status": "success",
+          "cpu_ms": 1066.957,
+          "output_summary": "Please let me know your availability.",
+          "warnings": [],
+          "metadata": {
+            "model_metrics": {
+              "model_name": "qwen2.5-1.5b-instruct-q4_k_m",
+              "model_path_basename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+              "model_loaded": true,
+              "model_load_time_ms": null,
+              "fallback_used": false,
+              "fallback_reason": null,
+              "input_tokens": 47,
+              "evidence_tokens": 0,
+              "output_tokens": 7,
+              "prompt_processing_time_ms": null,
+              "generation_time_ms": null,
+              "total_model_time_ms": 549.3,
+              "time_to_first_token_ms": null,
+              "stop_reason": "stop",
+              "prompt_tokens_per_second": 85.57,
+              "generation_tokens_per_second": 12.74,
+              "process_rss_before_bytes": 1745854464,
+              "process_rss_after_bytes": 1747730432,
+              "process_rss_peak_bytes": 1747730432,
+              "rss_measurement_method": "Windows/PowerShell/WorkingSet64",
+              "metrics_available": true,
+              "metrics_unavailable_reason": null
+            }
+          }
+        },
+        {
+          "step_id": "render",
+          "module": "response_renderer",
+          "status": "success",
+          "cpu_ms": 0.002,
+          "output_summary": "Please let me know your availability.",
+          "warnings": [],
+          "metadata": {}
+        }
+      ],
+      "small_model_calls": 1,
+      "real_llm_inferences": 1,
+      "fallback_responses": 0,
+      "verification_attempted": false,
+      "verification_status": "not_attempted",
+      "retrieved_source_id": null,
+      "retrieval_attempted": false,
+      "retrieval_status": "not_attempted",
+      "token_time": {
+        "input_tokens": 47,
+        "evidence_tokens": 0,
+        "output_tokens": 7,
+        "generation_time_ms": 0,
+        "stop_reason": "stop",
+        "model_name": "qwen2.5-1.5b-instruct-q4_k_m"
+      }
+    }
+  ],
+  "model_invoke_count": 0,
+  "total_wall_ms": 61565.4,
+  "avg_wall_ms": 2052.2,
+  "case_count": 30
+}
