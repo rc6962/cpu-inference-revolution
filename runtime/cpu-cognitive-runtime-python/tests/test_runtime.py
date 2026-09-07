@@ -266,3 +266,61 @@ def test_retrieval_has_evidence_tokens_field():
     for trace in sm_traces:
         mm = trace.metadata.get("model_metrics", {})
         assert "evidence_tokens" in mm
+
+# ── Model identity property tests ──
+
+def test_model_identity_property_with_path():
+    """model_identity returns correct stem and basename from a path."""
+    from cognitive_runtime.runtime import SmallModel
+    import os
+    old = os.environ.get("CPU_INFERENCE_MODEL_PATH")
+    try:
+        os.environ.pop("CPU_INFERENCE_MODEL_PATH", None)
+        sm = SmallModel(model_path="models/qwen2.5-1.5b-instruct-q4_k_m.gguf")
+        ident = sm.model_identity
+        assert ident["model_name"] == "qwen2.5-1.5b-instruct-q4_k_m"
+        assert ident["model_path_basename"] == "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    finally:
+        if old is not None:
+            os.environ["CPU_INFERENCE_MODEL_PATH"] = old
+
+
+def test_model_identity_property_with_3b():
+    """model_identity returns correct identity for 3B model."""
+    from cognitive_runtime.runtime import SmallModel
+    import os
+    old = os.environ.get("CPU_INFERENCE_MODEL_PATH")
+    try:
+        os.environ.pop("CPU_INFERENCE_MODEL_PATH", None)
+        sm = SmallModel(model_path="models/qwen2.5-3b-instruct-q4_k_m.gguf")
+        ident = sm.model_identity
+        assert ident["model_name"] == "qwen2.5-3b-instruct-q4_k_m"
+        assert ident["model_path_basename"] == "qwen2.5-3b-instruct-q4_k_m.gguf"
+    finally:
+        if old is not None:
+            os.environ["CPU_INFERENCE_MODEL_PATH"] = old
+
+
+def test_model_identity_property_no_model():
+    """model_identity returns None for both fields when no model configured."""
+    from cognitive_runtime.runtime import SmallModel
+    import os
+    old = os.environ.get("CPU_INFERENCE_MODEL_PATH")
+    try:
+        os.environ.pop("CPU_INFERENCE_MODEL_PATH", None)
+        sm = SmallModel()
+        ident = sm.model_identity
+        assert ident["model_name"] is None
+        assert ident["model_path_basename"] is None
+    finally:
+        if old is not None:
+            os.environ["CPU_INFERENCE_MODEL_PATH"] = old
+
+
+def test_model_identity_not_unknown():
+    """model_identity must never return 'unknown' — either real name or None."""
+    from cognitive_runtime.runtime import SmallModel
+    sm = SmallModel(model_path="models/qwen2.5-1.5b-instruct-q4_k_m.gguf")
+    ident = sm.model_identity
+    assert ident["model_name"] != "unknown"
+    assert ident["model_path_basename"] != "unknown"

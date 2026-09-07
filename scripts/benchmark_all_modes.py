@@ -102,8 +102,8 @@ class ForcedSmallModel:
                 if not text:
                     text = f"Demo response for: {context.request.text}"
                 model_metrics = {
-                    "model_name": getattr(self._real, '_model_name', 'unknown'),
-                    "model_path_basename": getattr(self._real, '_model_path_basename', ''),
+                    "model_name": self._real.model_identity["model_name"],
+                    "model_path_basename": self._real.model_identity["model_path_basename"],
                     "model_loaded": True,
                     "model_load_time_ms": None,
                     "fallback_used": False,
@@ -133,8 +133,8 @@ class ForcedSmallModel:
             except Exception as exc:
                 rss_after = self._real._get_rss()
                 model_metrics = {
-                    "model_name": getattr(self._real, '_model_name', 'unknown'),
-                    "model_path_basename": getattr(self._real, '_model_path_basename', ''),
+                    "model_name": self._real.model_identity["model_name"],
+                    "model_path_basename": self._real.model_identity["model_path_basename"],
                     "model_loaded": self._real._llm is not None,
                     "model_load_time_ms": None,
                     "fallback_used": True,

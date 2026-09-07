@@ -390,6 +390,14 @@ class SmallModel(BaseModule):
         self._model_path = model_path or os.environ.get("CPU_INFERENCE_MODEL_PATH")
         self._llm = None
 
+    @property
+    def model_identity(self) -> dict:
+        """Canonical model identity for trace metadata."""
+        return {
+            "model_name": Path(self._model_path).stem if self._model_path else None,
+            "model_path_basename": Path(self._model_path).name if self._model_path else None,
+        }
+
     def _load_model(self):
         if self._llm is not None:
             return
